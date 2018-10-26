@@ -15,14 +15,14 @@
 
 \title{SE 3XA3: Test Plan\\PGH Software Solutions}
 
-\author{Team \#, Team Name
+\author{Team 35, Team Name
 		\\ Pratyush Bhandari, bhandarp
 		\\ Gazenfar Syed, syedg1
 		\\ Hamid Ghasemi, ghasemih}
 
 \date{\today}
 
-\input{../Comments}
+
 
 \begin{document}
 
@@ -197,50 +197,70 @@ How test will be performed:
 
 \section{Tests for Proof of Concept}
 
-\subsection{Area of Testing1}
+For proof of Concept testing we will be focusing on verifying and validating the means by performing automated testing. Automated testing will require the ability to use sort and search for a particular outputs and verify the output. Therefore, testing for proof concept will contain using of sorting and searching for movies and displaying movie information such as rating, summary and it’s genre. 
+
+\subsection{Using Sorting and Searching to Display a Movie}
 		
-\paragraph{Title for Test}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{FC-1\\}
+Type:  Functional, Dynamic, Automated\\
+Initial State: There is an input\\
+Input: A complete movie name \\
+Output: All the movies that have the exact same name or their names contain the input name will be displayed on the screen in alphabet order.\\
+How Test Will Be Performed: One movie name will be picked from the movie list. Then what happens is it will go through the movie list, compares it to each movie name. If there is only one movie with that name the system will be returning one movie, if there are more than one movie, it will sort them based on the alphabet then exhibit those movies on the screen.
 
-Type: Functional, Dynamic, Manual, Static etc.
 					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{FC-2\\}
+Type:  Functional, Dynamic, Automated\\
+Initial State: There is an input\\
+Input: An incomplete movie name as an example (Pu--)\\
+Output: All the movies that contain the exact same letters in their name will be displayed on the screen in alphabet order.\\
+How Test Will Be Performed: Two letters will be typed in the movie search designated place. Then the program must compare those letters to each movie name in order to find movies that have those two letters in their names. Then movies must be shown on the screen in alphabet order, unless there is no movie in the list with those two letters. 
 
 \end{enumerate}
 
-\subsection{Area of Testing2}
+\subsection{Displaying Movie Information}
+How Test Will Be Performed: In each of following tests, one movie will be chosen and then it will be checked if the information which movie provides is exactly as expected information.
 
-...
+\begin{enumerate}
+\item{FC-3}\\
+Type:  Functional, Dynamic, Manual\\
+Initial State: Set an input\\
+Input: A movie name \\
+Output: Provide all the information about the movie that has been picked
 
-	
+
+\item{FC-4\\}
+Type:  Functional, Dynamic, Manual\\
+Initial State: No input \\
+Input: One movie be randomly picked\\
+Output: Provide all the information about the movie which has been picked
+
+\item{FC-5\\}
+Type:  Functional, Dynamic, Manual\\
+Initial State: Set an input\\
+Input: an incomplete movie name be randomly chosen\\
+Output: Provide all the information about the movie that has been picked
+\end{enumerate}
+
 \section{Comparison to Existing Implementation}	
+There are three tests that compare the program to the Existing Implementation of the program. Please refer to:
+
+FC-1 in Tests for Proof of Concept\\
+//test SS-5 in Tests for Nonfunctional Requirements - Usability\\
+//test SS-10 in Tests for Nonfunctional Requirements - Performance\\
+
 				
 \section{Unit Testing Plan}
+JUNIT framework will be used to do unit testing for this project.
 		
 \subsection{Unit testing of internal functions}
+To create unit test for internal functions of the program, methods that have a return value can be used to be tested. To be able to use those methods, particular inputs would be given to the methods and be checked if the result is similar to expected outputs. Series of unit tests can be created in this way. Unit tests will include tests that contain proper inputs and inputs that generate exceptions. Individually, all the classes will take care of importing everything that is needed for unit tests. This project will not need any stubs or drivers to be imported for testing. In the case of checking how much code we have covered we use coverage metrics. We will test majority of the codes which are not simple functions. Our goal percentage to beat will be 86 percent.
 		
 \subsection{Unit testing of output files}		
+To construct unit tests, which will test the accuracy of the output movies through searching, we will need movies which must be displayed and what it actually displays as outputs.There are cases that a user searches for a specific movie by inputting movie name and that name is part of the other movie name, in that case output file must exhibit all movies that consist of input name. For this case we will use methods which compare if the output file name and output file are exactly what have been expected. In order for a test case to be considered passed, movies should be at least 99 percent the same. Less than 99 percent and the test case fails. For this set of unit tests the required imports are:  java.io.IOException,  java.io.File, and java.io.File.compareTo.
 
 \bibliographystyle{plainnat}
 
@@ -250,15 +270,14 @@ How test will be performed:
 
 \section{Appendix}
 
-This is where you can place additional information.
+N/A
 
 \subsection{Symbolic Parameters}
 
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
+N/A
 
 \subsection{Usability Survey Questions?}
 
-This is a section that would be appropriate for some teams.
+N/A
 
 \end{document}
