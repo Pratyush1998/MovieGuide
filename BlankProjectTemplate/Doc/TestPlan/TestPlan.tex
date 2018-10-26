@@ -2,6 +2,7 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{pdfpages}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -12,15 +13,12 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Test Plan\\Title of Project}
+\title{SE 3XA3: Test Plan\\PGH Software Solutions}
 
 \author{Team \#, Team Name
-		\\ Pratyush Bhandari and bhandarp
-		\\ Gazenfar Syed and syedg1
-		\\ Student 1 Pratyush Bhandari and bhandarp
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
-}
+		\\ Pratyush Bhandari, bhandarp
+		\\ Gazenfar Syed, syedg1
+		\\ Hamid Ghasemi, ghasemih}
 
 \date{\today}
 
@@ -40,7 +38,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
+Oct 25 & 1.0 & Completing parts 1 and 2 of document\\
 Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
@@ -50,13 +48,15 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document ...
 
 \section{General Information}
 
 \subsection{Purpose}
+The purpose of testing our project is to allow us to build more confidence in knowing that our product works as it is intended to.
 
 \subsection{Scope}
+This test plan will provide us with a method to exhaustively test our MovieGuide re-implementation. Our re-implementation must be able to display, sort and update a list of movies from an API. As well as display summaries, trailers and ratings for each respective movie. The objective of our test plan is to prove that the MovieGuide re-implementation can successfully perform these main tasks. 
+
 
 \subsection{Acronyms, Abbreviations, and Symbols}
 	
@@ -67,8 +67,9 @@ This document ...
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-Abbreviation1 & Definition1\\
-Abbreviation2 & Definition2\\
+PoC & Proof of Concept\\
+GUI & Graphical User Interface\\
+SRS & Software Requirements Specification\\
 \bottomrule
 \end{tabularx}
 
@@ -77,32 +78,42 @@ Abbreviation2 & Definition2\\
 \begin{table}[!htbp]
 \caption{\textbf{Table of Definitions}} \label{Table}
 
-\begin{tabularx}{\textwidth}{p{3cm}X}
+\begin{tabularx}{\textwidth}{p{3.5cm}X}
 \toprule
 \textbf{Term} & \textbf{Definition}\\
 \midrule
-Term1 & Definition1\\
-Term2 & Definition2\\
+Automated Testing & A series of tests that are run automatically usually by a testing framework\\
+Unit Testing & A Method of testing centred on testing functions or methods\\
+Integration Testing & A method of testing that tests the entire system at once\\
+Static Testing & A method of testing that is done without executing the code\\
+Dynamic Testing & A method of testing that is done while the code is executed\\
+
 \bottomrule
 \end{tabularx}
 
 \end{table}	
 
 \subsection{Overview of Document}
+This document aims to formalize an exhaustive test plan for the MovieGuide re-implementation. It aims to arrange testing activities and delegate testing responsibilities among team members. As well as setting the initial groundwork for testing to begin, the document will also cover the specifics of testing certain characteristics of the code and will define what testing methods are to be used to perform each test.
 
 \section{Plan}
 	
 \subsection{Software Description}
+The software that is being developed will allow users to navigate through a list of movies loaded from an API. The user can then click on any movie to view a summary, a rating and watch a trailer. In technical terms, when a movie is loaded from the API, it is parsed into a java Movie object with summary, rating, trailer and title data. This data is then accordingly shown to the user through the GUI buttons.
+
 
 \subsection{Test Team}
+The team members involved in testing the application are Pratyush Bhandari, Gazenfar Syed and Hamid Ghasemi. Testing responsibilities will be split equally among team members.
 
 \subsection{Automated Testing Approach}
+Our approach to automated testing is bottom-up testing, which in essence tests each component at a lower hierarchy before going on to test the components higher in the hierarchy. As such, there will be a focus on unit testing all of the methods within classes first. Once there is certainty about the reliability of methods in the classes, the focus will shift to integration testing, which will test the functionality of each class. Finally there will be full application testing, which will involve testing the GUI of the application to perform actions that may involve  the use of multiple classes.
 
 \subsection{Testing Tools}
+The primary tool to be used for running all of the tests for the MovieGuide re-implementation will be JUnit; this framework will allow us to use Automated Testing to test our program.
 
 \subsection{Testing Schedule}
 		
-See Gantt Chart at the following url ...
+\url{https://gitlab.cas.mcmaster.ca/syedg1/MovieGuide_PGH/blob/master/BlankProjectTemplate/ProjectSchedule/3XA3%20Gantt.pdf}
 
 \section{System Test Description}
 	
