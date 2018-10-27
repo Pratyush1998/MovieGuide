@@ -15,7 +15,7 @@
 
 \title{SE 3XA3: Test Plan\\PGH Software Solutions}
 
-\author{Team 35, Team Name
+\author{Team 35, PGH Software Solutions
 		\\ Pratyush Bhandari, bhandarp
 		\\ Gazenfar Syed, syedg1
 		\\ Hamid Ghasemi, ghasemih}
@@ -30,8 +30,9 @@
 
 \pagenumbering{roman}
 \tableofcontents
+
+\newpage
 \listoftables
-\listoffigures
 
 \begin{table}[bp]
 \caption{\bf Revision History}
@@ -39,7 +40,8 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Oct 25 & 1.0 & Completing parts 1 and 2 of document\\
-Date 2 & 1.1 & Notes\\
+Oct 26 & 1.1 & Completing parts 4 to 6 of document\\
+Oct 26 & 1.2 & Completing part 3 of document\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -115,85 +117,140 @@ The primary tool to be used for running all of the tests for the MovieGuide re-i
 		
 \url{https://gitlab.cas.mcmaster.ca/syedg1/MovieGuide_PGH/blob/master/BlankProjectTemplate/ProjectSchedule/3XA3%20Gantt.pdf}
 
+
 \section{System Test Description}
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Loading}
 		
-\paragraph{Title for Test}
+\paragraph{Load Movie API}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{FS-LMA-1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Automated
 					
-Initial State: 
+Initial State: Program contains no information about the movies
 					
-Input: 
+Input: Make a get request to retrieve information from the API
 					
-Output: 
+Output: Data is loaded into the program and is ready to be parsed
 					
-How test will be performed: 
+How test will be performed: A unit test consisting of a get request for the movie API will be created. The data will be loaded into the program, and assertions statements will be written to verify the loading process. 
 					
-\item{test-id2\\}
+\item{FS-LMA-2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Manual
 					
-Initial State: 
+Initial State: Program contains loaded movie data
 					
-Input: 
+Input: User clicks on a movie to view more information
 					
-Output: 
+Output: Program displays the movie summary along with movie ratings
 					
-How test will be performed: 
+How test will be performed: The program will be run, and the user will click on a movie displayed in the main menu. The loading process will be verified once the movie summary and the movie ratings are successfully displayed to the user.
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Sorting}
 
-...
+\paragraph{Sort Movies}
+
+\begin{enumerate}
+	
+	\item{FS-SM-1\\}
+	
+	Type: Functional, Dynamic, Automated
+	
+	Initial State: Program contains unsorted list of movies
+	
+	Input: Sort the array containing the movies
+	
+	Output: Array of sorted movies
+	
+	How test will be performed: A unit test will be created for the sorting of the movies array. A sorting algorithm will be applied to the unsorted array and assertion statements will be utilized to verify that the array has been sorted
+	
+	\item{FS-SM-2\\}
+	
+	Type: Functional, Dynamic, Manual
+	
+	Initial State: Program contains unsorted list of movies
+	
+	Input: User clicks the option to sort movies by rating
+	
+	Output: Program lists the movies in order of highest rating to lowest rating
+	
+	How test will be performed: The program will be run, and the user will select the option to sort by rating. The program will display the list of movies sorted by rating. User will look through this list to verify the sorting functionality.
+	
+\end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Usability}
 		
-\paragraph{Title for Test}
+\paragraph{Application GUI}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{SS-1\\}
 
-Type: 
+Type: Structural, Static, Manual
 					
-Initial State: 
+Initial State: Program is installed but not launched
 					
-Input/Condition: 
+Input/Condition: Users in the test group will carefully read through back end code
 					
-Output/Result: 
+Output/Result: Will help identify and resolve structurally weak implementations in the program.
 					
-How test will be performed: 
+How test will be performed: The test team will perform a code walkthrough and look for opportunities where the usability of the user interface can be enhanced.
 					
-\item{test-id2\\}
+\item{SS-2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Structural, Dynamic, Manual
 					
-Initial State: 
+Initial State: Program has been launched 
 					
-Input: 
+Input/Condition: Users in the test team will rate the program on the criteria of usability and overall satisfaction. The ratings will be given on a scale of 1 to 5.
 					
-Output: 
+Output/Result: Average rating in each field must be 3 or higher
 					
-How test will be performed: 
+How test will be performed: Users in the test team will spend some time navigating through the application enough to explore the user interface thoroughly. Then they will rate the program on the basis of usability and satisfaction. If either criteria has an average rating below 3, the team will need to explore alternatives to improve the user interface.
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Performance}
 
-...
+\paragraph{Application Timeliness}
 
-\subsection{Traceability Between Test Cases and Requirements}
+\begin{enumerate}
+	
+	\item{SS-3\\}
+	
+	Type: Structural, Dynamic, Manual
+	
+	Initial State: Program has been launched
+	
+	Input/Condition: Users will select the option to sort the movies by rating
+	
+	Output/Result: The sorted list of movies must be displayed under 1 second
+	
+	How test will be performed: The user will click the option to sort movies by rating. The time taken to display the sorted list will be recorded. If the time elapsed is greater than 1 second, a more efficient sorting algorithm will need to be implemented.
+	
+	\item{SS-4\\}
+	
+	Type: Structural, Dynamic, Manual
+	
+	Initial State: Program has been launched 
+	
+	Input/Condition: User will click on a movie to view more information 
+	
+	Output/Result: The movie summary and rating will be displayed to the user in under 1 second
+	
+	How test will be performed: The user will click on a movie from the launch screen. The time taken to display the corresponding movie summary and rating will be recorded. If the time elapsed is greater than 1 second, implementations of different data structures should be explored to increase efficiency.
+	
+\end{enumerate}
 
 \section{Tests for Proof of Concept}
 
@@ -246,11 +303,13 @@ Output: Provide all the information about the movie that has been picked
 \end{enumerate}
 
 \section{Comparison to Existing Implementation}	
-There are three tests that compare the program to the Existing Implementation of the program. Please refer to:
+There are three tests that compare the program to the Existing Implementation of the program. Please refer to:\\
 
 FC-1 in Tests for Proof of Concept\\
-//test SS-5 in Tests for Nonfunctional Requirements - Usability\\
-//test SS-10 in Tests for Nonfunctional Requirements - Performance\\
+
+SS-1 and SS-2 in Tests for Nonfunctional Requirements - Usability\\
+
+SS-3 and SS-4 in Tests for Nonfunctional Requirements - Performance\\
 
 				
 \section{Unit Testing Plan}
@@ -262,22 +321,5 @@ To create unit test for internal functions of the program, methods that have a r
 \subsection{Unit testing of output files}		
 To construct unit tests, which will test the accuracy of the output movies through searching, we will need movies which must be displayed and what it actually displays as outputs.There are cases that a user searches for a specific movie by inputting movie name and that name is part of the other movie name, in that case output file must exhibit all movies that consist of input name. For this case we will use methods which compare if the output file name and output file are exactly what have been expected. In order for a test case to be considered passed, movies should be at least 99 percent the same. Less than 99 percent and the test case fails. For this set of unit tests the required imports are:  java.io.IOException,  java.io.File, and java.io.File.compareTo.
 
-\bibliographystyle{plainnat}
-
-\bibliography{SRS}
-
-\newpage
-
-\section{Appendix}
-
-N/A
-
-\subsection{Symbolic Parameters}
-
-N/A
-
-\subsection{Usability Survey Questions?}
-
-N/A
 
 \end{document}
