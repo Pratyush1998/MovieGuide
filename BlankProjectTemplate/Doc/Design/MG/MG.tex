@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}
 \usepackage{float}
 \usepackage{hyperref}
 \hypersetup{
@@ -29,17 +30,17 @@
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
 
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Module Guide\\MovieGuide Application}
 
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team 35, PGH Software Solutions
+		\\ Pratyush Bhandari, bhandarp
+		\\ Gazenfar Syed, syedg1
+		\\ Hamid Ghasemi, ghasemih
 }
 
 \date{\today}
 
-\input{../../Comments}
+
 
 \begin{document}
 
@@ -47,6 +48,9 @@
 
 \pagenumbering{roman}
 \tableofcontents
+
+\newpage
+
 \listoftables
 \listoffigures
 
@@ -55,109 +59,63 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+Nov 8 & 1.0 & Parts 1 and 2 completed\\
+Nov 9 & 1.1 & Parts 3, 4, and 5 completed\\
+Nov 9 & 1.2 & Parts 6 and 7 completed\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\newpage
-
 \pagenumbering{arabic}
 
+ 
+\newpage
 \section{Introduction}
 
-Decomposing a system into modules is a commonly accepted approach to developing
-software.  A module is a work assignment for a programmer or programming
-team~\citep{ParnasEtAl1984}.  We advocate a decomposition
-based on the principle of information hiding~\citep{Parnas1972a}.  This
-principle supports design for change, because the ``secrets'' that each module
-hides represent likely future changes.  Design for change is valuable in SC,
-where modifications are frequent, especially during initial development as the
-solution space is explored.  
+\subsection{Overview}
+The MovieGuide project is a re-implementation of an open-source movie reviews Android application which allows users to view ratings, description, and trailers for any movie within the API database.
 
-Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
-\begin{itemize}
-\item System details that are likely to change independently should be the
-  secrets of separate modules.
-\item Each data structure is used in only one module.
-\item Any other program that requires information stored in a module's data
-  structures must obtain it by calling access programs belonging to that module.
-\end{itemize}
-
-After completing the first stage of the design, the Software Requirements
-Specification (SRS), the Module Guide (MG) is developed~\citep{ParnasEtAl1984}. The MG
-specifies the modular structure of the system and is intended to allow both
-designers and maintainers to easily identify the parts of the software.  The
-potential readers of this document are as follows:
+\subsection{Context}
+This is the Module Guide Design Documentation for the MovieGuide re-implementation. Readers of this document include, but are not limited to:
 
 \begin{itemize}
-\item New project members: This document can be a guide for a new project member
-  to easily understand the overall structure and quickly find the
-  relevant modules they are searching for.
-\item Maintainers: The hierarchical structure of the module guide improves the
-  maintainers' understanding when they need to make changes to the system. It is
-  important for a maintainer to update the relevant sections of the document
-  after changes have been made.
-\item Designers: Once the module guide has been written, it can be used to
-  check for consistency, feasibility and flexibility. Designers can verify the
-  system in various ways, such as consistency among modules, feasibility of the
-  decomposition, and flexibility of the design.
+	\item New project members: This document gives an insight into the design structure of the project. It contains information about the module hierarchy along with the modular decomposition, so that new members can quickly learn how each module is integrated into the program.
+	\item Maintainers: This document also outlines areas where changes are anticipated which will be helpful to the maintainers as they will be able to quickly identify areas of the application that need to be improved. Moreover, maintainers can utilize the breakdown of the modules to better understand the project structure so that they know which modules to update.
+	\item Designers/Developers: This module guide describes the design choices that were made when developing the program. It contains an overview of the relationships between all modules which will aid the designers and developers in determining whether the product design is satisfiable for the software requirements.
 \end{itemize}
 
-The rest of the document is organized as follows. Section
-\ref{SecChange} lists the anticipated and unlikely changes of the software
-requirements. Section \ref{SecMH} summarizes the module decomposition that
-was constructed according to the likely changes. Section \ref{SecConnection}
-specifies the connections between the software requirements and the
-modules. Section \ref{SecMD} gives a detailed description of the
-modules. Section \ref{SecTM} includes two traceability matrices. One checks
-the completeness of the design against the requirements provided in the SRS. The
-other shows the relation between anticipated changes and the modules. Section
-\ref{SecUse} describes the use relation between modules.
+\subsection{Design Principles}
+The design principles utilized for our design choices include information hiding and encapsulation. Information hiding keeps certain aspects of the code a secret from the other modules which reduces the complexity of the program and protects it from extensive modifications that could potentially harm the implementation. Encapsulation combines data and methods allowing internal data to be accessed by public methods. Furthermore, modules were implemented with the principles of high cohesion and low coupling to ensure that the modules are related but not heavily dependent on each other.
+
+\subsection{Document Structure}
+This document is organized as specified below:
+\begin{itemize}
+	\item Section 2: anticipated changes and unlikely changes for the current implementation
+	\item Section 3: outlines the module hierarchy 
+	\item Section 4: summarizes the relationships between modules and software requirements
+	\item Section 5: explains the secret and service/responsibility of each module
+	\item Section 6: relates modules to requirements and anticipated changes 
+	\item Section 7: describes the uses relations between modules
+\end{itemize}
 
 \section{Anticipated and Unlikely Changes} \label{SecChange}
-
-This section lists possible changes to the system. According to the likeliness
-of the change, the possible changes are classified into two
-categories. Anticipated changes are listed in Section \ref{SecAchange}, and
-unlikely changes are listed in Section \ref{SecUchange}.
-
 \subsection{Anticipated Changes} \label{SecAchange}
-
-Anticipated changes are the source of the information that is to be hidden
-inside the modules. Ideally, changing one of the anticipated changes will only
-require changing the one module that hides the associated decision. The approach
-adapted here is called design for
-change.
-
-\begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
-\end{description}
+\begin{itemize}
+	\item AC1: The API used to retrieve information about movies 
+	\item AC2: The format of the input data
+	\item AC3: The format of the output data
+	\item AC4: The User Interface utilized to navigate through the application
+	\item AC5: How movie data is stored locally on the application (ie. improving performance)
+\end{itemize}
 
 \subsection{Unlikely Changes} \label{SecUchange}
-
-The module design should be as general as possible. However, a general system is
-more complex. Sometimes this complexity is not necessary. Fixing some design
-decisions at the system architecture stage can simplify the software design. If
-these decision should later need to be changed, then many parts of the design
-will potentially need to be modified. Hence, it is not intended that these
-decisions will be changed.
-
-\begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
-  (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
-  a source of input data external to the software.
-\item ...
-\end{description}
+\begin{itemize}
+	\item UC1: The input/output devices (system is designed to run on Android devices) 
+	\item UC2: The purpose of the software to provide ratings and descriptions about movies
+	\item UC3: The storage method of output data (system assumes there is sufficient storage space on the device, so output data will be stored locally)
+\end{itemize}
 
 \section{Module Hierarchy} \label{SecMH}
-
 This section provides an overview of the module design. Modules are summarized
 in a hierarchy decomposed by secrets in Table \ref{TblMH}. The modules listed
 below, which are leaves in the hierarchy tree, are the modules that will
@@ -165,7 +123,13 @@ actually be implemented.
 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Input Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Search Movies Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Sort Movies Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Output Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Searching Algorithm Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] List Object Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] retrofitURL Module
 \end{description}
 
 
@@ -176,22 +140,21 @@ actually be implemented.
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+{Hardware-Hiding Module} & N/A \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} \\
+& Input Module\\
+& Search Movies Module\\
+& Sort Movies Module\\
+& Output Module\\
+
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} \\
+& Searching Algorithm Module\\
+& List Object Module\\
+& retrofitURL Module\\
 \bottomrule
 
 \end{tabular}
@@ -201,77 +164,53 @@ actually be implemented.
 
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
-The design of the system is intended to satisfy the requirements developed in
-the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
+The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table \ref{TblRT} and \ref{TblNRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
 
 \section{Module Decomposition} \label{SecMD}
 
-Modules are decomposed according to the principle of ``information hiding''
-proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
-decomposition is a brief statement of the design decision hidden by the
-module. The \emph{Services} field specifies \emph{what} the module will do
-without documenting \emph{how} to do it. For each module, a suggestion for the
-implementing software is given under the \emph{Implemented By} title. If the
-entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  Also indicate if the
-module will be implemented specifically for the software.
-
-Only the leaf modules in the
-hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
-that the module is not a leaf and will not have to be implemented. Whether or
-not this module is implemented depends on the programming language
-selected.
-
-\subsection{Hardware Hiding Modules (\mref{mHH})}
-
-\begin{description}
-\item[Secrets:]The data structure and algorithm used to implement the virtual
-  hardware.
-\item[Services:]Serves as a virtual hardware used by the rest of the
-  system. This module provides the interface between the hardware and the
-  software. So, the system can use it to display outputs or to accept inputs.
-\item[Implemented By:] OS
-\end{description}
-
-\subsection{Behaviour-Hiding Module}
-
-\begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
-\end{description}
-
-\subsubsection{Input Format Module (\mref{mInput})}
-
-\begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\end{description}
-
-\subsubsection{Etc.}
-
-
-\subsection{Software Decision Module}
-
-\begin{description}
-\item[Secrets:] The design decision based on mathematical theorems, physical
-  facts, or programming considerations. The secrets of this module are
-  \emph{not} described in the SRS.
-\item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
-\item[Implemented By:] --
-\end{description}
-
-\subsubsection{Etc.}
+	\subsection{Hardware Hiding Module}
+	\textbf{Secret}: The data structure and algorithm used to implement the virtual hardware.\\
+	\textbf{Services}:Serves as a virtual hardware used by the rest of the system. This module provides the interface between the hardware and the software. So, the system can use it to display outputs or to accept inputs. \\
+	\textbf{Implemented By}: Android OS
+	
+	\subsection{Behaviour Hiding Module}
+	\textbf{Secrets}: The contents of the required behaviours. \\
+	\textbf{Services}: Includes programs that provide externally visible behaviour of the system as specified in the software requirements specification (SRS) documents. This module serves as a communication layer between the hardware-hiding module and the software decision module. The programs in this module will need to change if there are changes in the SRS.\\
+	\textbf{Implemented By}: MovieGuide \\
+	\subsubsection{Input Module}
+	\textbf{Secret}:  Inputs \\
+	\textbf{Service}: Allows user to scroll, search and click on the list of movies being displayed on the screen.   \\  
+	\textbf{Implemented By}: MovieGuide \\
+	\subsubsection{Search Movies Module}
+	\textbf{Secret}: Search Query\\
+	\textbf{Service}: Allows user to enter a search query in the search bar which is then passed as an endpoint to the retrofitURL Module. \\
+	\textbf{Implemented By}: MovieGuide\\
+	\subsubsection{Sort Movies Module}
+	\textbf{Secret}: Movies \\
+	\textbf{Service}: Allows user to select different options for sorting the list of movies in the database. \\
+	\textbf{Implemented By}: MovieGuide\\ 
+	\subsubsection{Output Module}
+	\textbf{Secret}: MovieInfoPage \\
+	\textbf{Service}: Displays movie information about a specific movie that the user clicked on from the displayed list of movies. \\
+	\textbf{Implemented By}: MovieGuide\\
+	
+	
+	\subsection{Software Decision Module}
+	\textbf{Secrets}: The design decision based on mathematical theorems, physical facts, or programming considerations. The secrets of this module are \emph{not} described in the SRS. \\
+	\textbf{Services}:Includes data structure and algorithms used in the system that do not provide direct interaction with the user. \\
+	\textbf{Implemented By}:  -\\
+	\subsubsection{Searching Algorithm Module}
+	\textbf{Secret}:  Search Algorithm \\
+	\textbf{Service}: Uses an algorithm to efficiently find movie matching the search query. \\
+	\textbf{Implemented By}: - \\
+	\subsubsection{List Object Module}
+	\textbf{Secret}: List Object \\
+	\textbf{Service}: Stores the list of movies in a ListView object.  \\ 
+	\textbf{Implemented By}: -\\
+	\subsubsection{retrofitURL Module}
+	\textbf{Secret}: API URL \\
+	\textbf{Service}: Stores the URL of the API  that GET and POST requests will be sent to. \\ 
+	\textbf{Implemented By}: -\\
 
 \section{Traceability Matrix} \label{SecTM}
 
@@ -286,22 +225,54 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+FR1 & M5\\
+FR2 & M3,M7,M8\\
+FR3 & M3,M7,M5,M8\\
+FR4 & M5\\
+FR5 & M4,M7\\
 \bottomrule
 \end{tabular}
-\caption{Trace Between Requirements and Modules}
+\caption{Trace Between Functional Requirements and Modules}
 \label{TblRT}
 \end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+		\toprule
+		\textbf{Req.} & \textbf{Modules}\\
+		\midrule
+		NFR(3.1.1) & M2\\
+		NFR(3.1.2) & M2,M5\\
+		NFR(3.2.1) & M2\\
+		NFR(3.2.3) & M1,M2,\\
+		NFR(3.2.4) & M1,M2\\
+		NFR(3.2.5) & M2\\
+		NFR(3.3.1) & M2,M5\\
+		NFR(3.3.2) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.3.3) & M2,\\
+		NFR(3.3.4) & M1\\
+		NFR(3.3.5) & M1, M2, M3, M4, M5, M6, M7, M8\\
+		NFR(3.3.6) & M5\\
+		NFR(3.3.7) & M3,M4,M6,M7,M8\\
+		NFR(3.3.8) & M1,M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.4.1) & M1\\
+		NFR(3.4.2) & M1,M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.4.3) & M2,M5\\
+		NFR(3.4.4) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.5) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.6.1) & M3,M4,M6,M7,M8\\
+		NFR(3.6.2) & M3,M4,M6,M7,M8\\
+		NFR(3.6.3) & M2,M3,M4,M6,M7,M8\\
+		NFR(3.6.5) & M3,M4,M6,M7,M8\\
+		NFR(3.7) & M5\\
+		NFR(3.8) & M1,M3,M4,M5,M6,M7,M8\\
+		\bottomrule
+	\end{tabular}
+	\caption{Trace Between Non-Functional Requirements and Modules}
+	\label{TblNRT}
+\end{table}
+
 
 \begin{table}[H]
 \centering
@@ -309,47 +280,27 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+AC1 & M8\\
+AC2 & M2\\
+AC3 & M5\\
+AC4 & M2,M5,M7\\
+AC5 & M5\\
+
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
 \label{TblACT}
 \end{table}
 
-\section{Use Hierarchy Between Modules} \label{SecUse}
 
-In this section, the uses hierarchy between modules is
-provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
-correct execution of B may be necessary for A to complete the task described in
-its specification. That is, A {\em uses} B if there exist situations in which
-the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
-the modules. It can be seen that the graph is a directed acyclic graph
-(DAG). Each level of the hierarchy offers a testable and usable subset of the
-system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
+
+\section{Use Hierarchy Between Modules} \label{SecUse}
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[max size={\textwidth}{\textheight}]{3}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
-
-%\section*{References}
-
-\bibliographystyle {plainnat}
-\bibliography {MG}
 
 \end{document}
