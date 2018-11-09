@@ -152,7 +152,7 @@ actually be implemented.
 \multirow{3}{0.3\textwidth}{Software Decision Module} \\
 & Searching Algorithm Module\\
 & List Object Module\\
-& retrofitURL Module
+& retrofitURL Module\\
 \bottomrule
 
 \end{tabular}
@@ -164,7 +164,7 @@ actually be implemented.
 
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
+between requirements and modules is listed in Table \ref{TblRT} and \ref{TblNRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
 
 
 \section{Module Decomposition} \label{SecMD}
@@ -226,22 +226,54 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+FR1 & M5\\
+FR2 & M3,M7,M8\\
+FR3 & M3,M7,M5,M8\\
+FR4 & M5\\
+FR5 & M4,M7\\
 \bottomrule
 \end{tabular}
-\caption{Trace Between Requirements and Modules}
+\caption{Trace Between Functional Requirements and Modules}
 \label{TblRT}
 \end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+		\toprule
+		\textbf{Req.} & \textbf{Modules}\\
+		\midrule
+		NFR(3.1.1) & M2\\
+		NFR(3.1.2) & M2,M5\\
+		NFR(3.2.1) & M2\\
+		NFR(3.2.3) & M1,M2,\\
+		NFR(3.2.4) & M1,M2\\
+		NFR(3.2.5) & M2\\
+		NFR(3.3.1) & M2,M5\\
+		NFR(3.3.2) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.3.3) & M2,\\
+		NFR(3.3.4) & M1\\
+		NFR(3.3.5) & M1, M2, M3, M4, M5, M6, M7, M8\\
+		NFR(3.3.6) & M5\\
+		NFR(3.3.7) & M3,M4,M6,M7,M8\\
+		NFR(3.3.8) & M1,M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.4.1) & M1\\
+		NFR(3.4.2) & M1,M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.4.3) & M2,M5\\
+		NFR(3.4.4) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.5) & M2,M3,M4,M5,M6,M7,M8\\
+		NFR(3.6.1) & M3,M4,M6,M7,M8\\
+		NFR(3.6.2) & M3,M4,M6,M7,M8\\
+		NFR(3.6.3) & M2,M3,M4,M6,M7,M8\\
+		NFR(3.6.5) & M3,M4,M6,M7,M8\\
+		NFR(3.7) & M5\\
+		NFR(3.8) & M1,M3,M4,M5,M6,M7,M8\\
+		\bottomrule
+	\end{tabular}
+	\caption{Trace Between Non-Functional Requirements and Modules}
+	\label{TblNRT}
+\end{table}
+
 
 \begin{table}[H]
 \centering
@@ -249,36 +281,23 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+AC1 & M8\\
+AC2 & M2\\
+AC3 & M5\\
+AC4 & M2,M5,M7\\
+AC5 & M5\\
+
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
 \label{TblACT}
 \end{table}
 
+
+
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
-In this section, the uses hierarchy between modules is
-provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
-correct execution of B may be necessary for A to complete the task described in
-its specification. That is, A {\em uses} B if there exist situations in which
-the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
-the modules. It can be seen that the graph is a directed acyclic graph
-(DAG). Each level of the hierarchy offers a testable and usable subset of the
-system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
+\includegraphics{3}
 
 \begin{figure}[H]
 \centering
