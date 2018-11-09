@@ -121,7 +121,13 @@ actually be implemented.
 
 \begin{description}
 \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Input Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Search Movies Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Sort Movies Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Output Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Searching Algorithm Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] List Object Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] retrofitURL Module
 \end{description}
 
 
@@ -132,22 +138,21 @@ actually be implemented.
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+{Hardware-Hiding Module} & N/A \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} \\
+& Input Module\\
+& Search Movies Module\\
+& Sort Movies Module\\
+& Output Module\\
+
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} \\
+& Searching Algorithm Module\\
+& List Object Module\\
+& retrofitURL Module
 \bottomrule
 
 \end{tabular}
@@ -159,75 +164,54 @@ actually be implemented.
 
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
+between requirements and modules is listed in Table \ref{TblRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
+
 
 \section{Module Decomposition} \label{SecMD}
 
-Modules are decomposed according to the principle of ``information hiding''
-proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
-decomposition is a brief statement of the design decision hidden by the
-module. The \emph{Services} field specifies \emph{what} the module will do
-without documenting \emph{how} to do it. For each module, a suggestion for the
-implementing software is given under the \emph{Implemented By} title. If the
-entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  Also indicate if the
-module will be implemented specifically for the software.
-
-Only the leaf modules in the
-hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
-that the module is not a leaf and will not have to be implemented. Whether or
-not this module is implemented depends on the programming language
-selected.
-
-\subsection{Hardware Hiding Modules (\mref{mHH})}
-
-\begin{description}
-\item[Secrets:]The data structure and algorithm used to implement the virtual
-  hardware.
-\item[Services:]Serves as a virtual hardware used by the rest of the
-  system. This module provides the interface between the hardware and the
-  software. So, the system can use it to display outputs or to accept inputs.
-\item[Implemented By:] OS
-\end{description}
-
-\subsection{Behaviour-Hiding Module}
-
-\begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
-\end{description}
-
-\subsubsection{Input Format Module (\mref{mInput})}
-
-\begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\end{description}
-
-\subsubsection{Etc.}
-
-
-\subsection{Software Decision Module}
-
-\begin{description}
-\item[Secrets:] The design decision based on mathematical theorems, physical
-  facts, or programming considerations. The secrets of this module are
-  \emph{not} described in the SRS.
-\item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
-\item[Implemented By:] --
-\end{description}
-
-\subsubsection{Etc.}
+	\subsection{Hardware Hiding Module}
+	\textbf{Secret}: The data structure and algorithm used to implement the virtual hardware.\\
+	\textbf{Services}:Serves as a virtual hardware used by the rest of the system. This module provides the interface between the hardware and the software. So, the system can use it to display outputs or to accept inputs. \\
+	\textbf{Implemented By}: Android OS
+	
+	\subsection{Behaviour Hiding Module}
+	\textbf{Secrets}: The contents of the required behaviours. \\
+	\textbf{Services}: Includes programs that provide externally visible behaviour of the system as specified in the software requirements specification (SRS) documents. This module serves as a communication layer between the hardware-hiding module and the software decision module. The programs in this module will need to change if there are changes in the SRS.\\
+	\textbf{Implemented By}: MovieGuide \\
+	\subsubsection{Input Module}
+	\textbf{Secret}:  Inputs \\
+	\textbf{Service}: Allows user to scroll, search and click on the list of movies being displayed on the screen.   \\  
+	\textbf{Implemented By}: MovieGuide \\
+	\subsubsection{Search Movies Module}
+	\textbf{Secret}: Search Query\\
+	\textbf{Service}: Allows user to enter a search query in the search bar which is then passed as an endpoint to the retrofitURL Module. \\
+	\textbf{Implemented By}: MovieGuide\\
+	\subsubsection{Sort Movies Module}
+	\textbf{Secret}: Movies \\
+	\textbf{Service}: Allows user to select different options for sorting the list of movies in the database. \\
+	\textbf{Implemented By}: MovieGuide\\ 
+	\subsubsection{Output Module}
+	\textbf{Secret}: MovieInfoPage \\
+	\textbf{Service}: Displays movie information about a specific movie that the user clicked on from the displayed list of movies. \\
+	\textbf{Implemented By}: MovieGuide\\
+	
+	
+	\subsection{Software Decision Module}
+	\textbf{Secrets}: The design decision based on mathematical theorems, physical facts, or programming considerations. The secrets of this module are \emph{not} described in the SRS. \\
+	\textbf{Services}:Includes data structure and algorithms used in the system that do not provide direct interaction with the user. \\
+	\textbf{Implemented By}:  -\\
+	\subsubsection{Searching Algorithm Module}
+	\textbf{Secret}:  Search Algorithm \\
+	\textbf{Service}: Uses an algorithm to efficiently find movie matching the search query. \\
+	\textbf{Implemented By}: - \\
+	\subsubsection{List Object Module}
+	\textbf{Secret}: List Object \\
+	\textbf{Service}: Stores the list of movies in a ListView object.  \\ 
+	\textbf{Implemented By}: -\\
+	\subsubsection{retrofitURL Module}
+	\textbf{Secret}: API URL \\
+	\textbf{Service}: Stores the URL of the API  that GET and POST requests will be sent to. \\ 
+	\textbf{Implemented By}: -\\
 
 \section{Traceability Matrix} \label{SecTM}
 
