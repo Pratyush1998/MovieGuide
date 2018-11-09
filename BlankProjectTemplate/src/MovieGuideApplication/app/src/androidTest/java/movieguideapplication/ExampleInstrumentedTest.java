@@ -1,4 +1,4 @@
-package com.example.pratyush.movieguideapplication;
+package movieguideapplication;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
