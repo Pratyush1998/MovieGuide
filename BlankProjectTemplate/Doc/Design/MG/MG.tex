@@ -6,6 +6,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
+\usepackage[export]{adjustbox}
 \usepackage{float}
 \usepackage{hyperref}
 \hypersetup{
@@ -58,8 +59,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Nov 8 & 1.0 & Parts 1 and 2\\
-Date 2 & 1.1 & Notes\\
+Nov 8 & 1.0 & Parts 1 and 2 completed\\
+Nov 9 & 1.1 & Parts 3, 4, and 5 completed\\
+Nov 9 & 1.2 & Parts 6 and 7 completed\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -294,11 +296,9 @@ AC5 & M5\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
-\includegraphics{3}
-
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[max size={\textwidth}{\textheight}]{3}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
