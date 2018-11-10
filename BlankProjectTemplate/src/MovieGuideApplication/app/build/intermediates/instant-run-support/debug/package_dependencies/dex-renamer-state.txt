@@ -1,4 +1,4 @@
-#Wed Nov 07 18:57:59 EST 2018
+#Wed Nov 07 20:41:50 EST 2018
 base.0=/Users/Pratyush/MovieGuide_PGH/BlankProjectTemplate/src/MovieGuideApplication/app/build/intermediates/transforms/dexMerger/debug/10
 path.0=classes.dex
 renamed.0=classes.dex
