@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PGH Software Solutions" company="" webLink="http://" view-date="2018-09-02" view-index="0" gantt-divider-location="298" resource-divider-location="300" version="2.8.9" locale="en_CA">
+<?xml version="1.0" encoding="UTF-8"?><project name="PGH Software Solutions" company="" webLink="http://" view-date="2018-09-02" view-index="1" gantt-divider-location="298" resource-divider-location="300" version="2.8.9" locale="en_CA">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Name" width="165" order="0"/>
@@ -40,17 +40,17 @@
         <task id="10" name="Requirements Doc (Revision 0)" color="#8cb6ce" meeting="false" start="2018-10-01" duration="5" complete="100" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
         <task id="12" name="Proof of Concept Demo" color="#8cb6ce" meeting="false" start="2018-10-12" duration="3" complete="100" thirdDate="2019-03-13" thirdDate-constraint="0" expand="true"/>
         <task id="14" name="Test Plan (Rev 0)" color="#8cb6ce" meeting="false" start="2018-10-16" duration="9" complete="100" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
-        <task id="17" name="Design and Document (Rev 0)" color="#8cb6ce" meeting="false" start="2018-10-29" duration="10" complete="0" thirdDate="2018-10-09" thirdDate-constraint="0" expand="true"/>
+        <task id="17" name="Design and Document (Rev 0)" color="#8cb6ce" meeting="false" start="2018-10-29" duration="10" complete="100" thirdDate="2018-10-09" thirdDate-constraint="0" expand="true"/>
         <task id="19" name="Revision 0 Demo" color="#8cb6ce" meeting="false" start="2018-11-12" duration="2" complete="0" thirdDate="2018-10-17" thirdDate-constraint="0" expand="true"/>
         <task id="21" name="Final Demo Complete" color="#cccc00" meeting="true" start="2018-11-27" duration="0" complete="10" thirdDate="2018-10-29" thirdDate-constraint="0" expand="true"/>
-        <task id="60" name="List Movies from API" color="#ff0033" meeting="false" start="2018-10-12" duration="3" complete="100" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
-        <task id="66" name="Sort Movies from API" color="#ff0033" meeting="false" start="2018-10-25" duration="5" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
+        <task id="60" name="retorfitURL Module Implementation" color="#ff0033" meeting="false" start="2018-10-12" duration="3" complete="100" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
+        <task id="66" name="Sort Movies Module Implementation" color="#ff0033" meeting="false" start="2018-10-25" duration="5" complete="50" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
         <task id="68" name="Build App GUI" color="#ff0033" meeting="false" start="2018-11-01" duration="17" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
         <task id="70" name="Make Possible Changes for Performance" color="#ff0033" meeting="false" start="2018-11-26" duration="1" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true">
             <depend id="21" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="26" name="Final Doc" color="#8cb6ce" meeting="false" start="2018-11-30" duration="6" complete="0" thirdDate="2018-09-10" thirdDate-constraint="0" expand="true"/>
-        <task id="35" name="API Movie Loading Testing" color="#66cc00" meeting="false" start="2018-10-25" duration="5" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
+        <task id="35" name="API Movie Loading Testing" color="#66cc00" meeting="false" start="2018-10-25" duration="5" complete="20" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
         <task id="36" name="Movie Sorting Testing" color="#66cc00" meeting="false" start="2018-11-01" duration="5" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
         <task id="37" name="App GUI Testing" color="#66cc00" meeting="false" start="2018-11-08" duration="11" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true">
             <depend id="39" type="2" difference="0" hardness="Strong"/>
