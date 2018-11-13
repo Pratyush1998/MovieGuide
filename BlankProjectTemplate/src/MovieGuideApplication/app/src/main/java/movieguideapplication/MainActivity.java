@@ -2,6 +2,8 @@ package movieguideapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -9,6 +11,10 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import android.content.Intent;
+
+
 
 /**
  * Parent class of the application
@@ -69,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     movies[i] = movieList.getMovies().get(i).getTitle();
                 }
 
-                listView.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, movies));
+                listView.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_selectable_list_item, movies));
             }
 
             /**
@@ -82,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, MovieInfoView.class);
+                String movie = adapterView.getAdapter().getItem(i).toString();
+                intent.putExtra("MovieTitle", movie);
+                startActivity(intent);
             }
         });
 
