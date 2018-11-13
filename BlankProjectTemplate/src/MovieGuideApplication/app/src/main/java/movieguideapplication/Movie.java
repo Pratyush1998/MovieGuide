@@ -43,6 +43,10 @@ public class Movie {
     @Expose
     double popularity;
 
+    @SerializedName("overview")
+    @Expose
+    String overview;
+
     /**
      * Gets the title of the movie
      * @return string containing the title
@@ -52,6 +56,8 @@ public class Movie {
         return title;
     }
 
+    public String getOverview(){return overview;}
+
     /**
      * Constructor for the Movie Class
      * @param id Contains the ID number of the movie
@@ -60,12 +66,13 @@ public class Movie {
      * @param title Contains a numerical value for the popularity of the movie
      * @param popularity Contains a numerical value for the popularity of the movie
      */
-    public Movie(int id, boolean video, double vote_average, String title, double popularity)
+    public Movie(int id, boolean video, double vote_average, String title, double popularity, String overview)
     {
         this.id = id;
         this.video = video;
         this.vote_average = vote_average;
         this.title = title;
         this.popularity = popularity;
+        this.overview = overview;
     }
 }
