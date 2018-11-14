@@ -23,6 +23,6 @@ public interface MovieRetriever {
      * @param page Page to extract movies from
      * @return list of call responses from the API
      */
-    @GET("/3/discover/movie?sort_by=popularity.desc?&api_key=df63c842bafad96da9f702c5aaa2c5cc")
+    @GET("/3/discover/movie?api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=popularity.desc")
     Call <MovieList> getMovies(@Query("page") int page);
 }

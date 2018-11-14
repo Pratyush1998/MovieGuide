@@ -18,6 +18,40 @@
         android:id="@+id/toolbar"
         />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundDark">
+
+        <Button
+            android:id="@+id/PrevButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/backgroundDark"
+            android:text="@string/PrevButton"
+            android:textColor="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/PageNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/PrevButton"
+            android:layout_alignTop="@+id/PrevButton"
+            android:text="PAGE"
+            android:textColor="@color/colorAccent"/>
+        <Button
+            android:id="@+id/NextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@color/backgroundDark"
+            android:text="@string/NextButton"
+            android:textColor="@color/colorAccent"/>
+
+    </RelativeLayout>
 
     <ListView
         android:id = "@+id/movieListView"

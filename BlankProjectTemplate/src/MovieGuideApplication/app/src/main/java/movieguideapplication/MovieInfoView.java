@@ -61,7 +61,7 @@ public class MovieInfoView extends AppCompatActivity  {
         release_date.setText("Release Date: " + movie.getReleaseDate() );
 
         TextView popularity = findViewById(R.id.Popularity);
-        popularity.setText("Popularity: " + String.valueOf(movie.getPopularity()) + "/10");
+        popularity.setText("Popularity: " + String.valueOf(movie.getPopularity()));
 
         TextView overview_title = findViewById(R.id.OverviewTitle);
         overview_title.setText(R.string.Summary);

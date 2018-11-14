@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,8 @@ import android.content.Intent;
  * Parent class of the application
  */
 public class MainActivity extends AppCompatActivity {
+
+    public int page = 1;
 
     /**
      * Variable of type ListView
@@ -39,27 +42,29 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         listView = findViewById(R.id.movieListView);
 
-
-        getMovies();
-
+        if(getIntent() != null){
+            Intent intent = getIntent();
+            page = (int)intent.getIntExtra("PageNumber", 1);
+            getMovies(page);
+        }else {
+            getMovies(page);
+        }
     }
 
     /**
      * Retrieves the movies from the API
      */
-    private void getMovies(){
+    private void getMovies(final int page){
 
         /**
          * MovieRetriever objected created using the BASE_URL from ApiUtils class
          */
         MovieRetriever movies = ApiUtils.getMovieRetirever();
 
-        int current_page = 1;
-
         /**
          * A list of movies retrieved using the API
          */
-        Call<MovieList> call = movies.getMovies(current_page);
+        Call<MovieList> call = movies.getMovies(page);
 
         call.enqueue(new Callback<MovieList>() {
 
@@ -70,6 +75,34 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onResponse(Call<MovieList> call, Response<MovieList> response) {
+                Button next = (Button)findViewById(R.id.NextButton);
+                Button prev = (Button)findViewById(R.id.PrevButton);
+
+                TextView pageNum = findViewById(R.id.PageNum);
+                pageNum.setText("Page: " + page);
+
+                next.setOnClickListener(new View.OnClickListener(){
+                    int page_num = page;
+                    @Override
+                    public void onClick(View view){
+                        page_num++;
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        intent.putExtra("PageNumber", page_num);
+                        startActivity(intent);
+                    }
+                });
+
+                prev.setOnClickListener(new View.OnClickListener(){
+                    int page_num = page;
+                    @Override
+                    public void onClick(View view){
+                        page_num--;
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        intent.putExtra("PageNumber", page_num);
+                        startActivity(intent);
+                    }
+                });
+
 
                 final MovieList movieList = response.body();
 
