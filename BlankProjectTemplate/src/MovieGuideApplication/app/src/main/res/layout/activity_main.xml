@@ -6,15 +6,25 @@
     android:layout_height="match_parent"
     tools:context="movieguideapplication.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background"
+        >
+
     <include
         layout="@layout/app_bar"
         android:id="@+id/toolbar"
         />
+
+
     <ListView
         android:id = "@+id/movieListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 

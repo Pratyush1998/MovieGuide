@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
+        setSupportActionBar(toolbar);
         listView = findViewById(R.id.movieListView);
 
 
@@ -52,10 +54,12 @@ public class MainActivity extends AppCompatActivity {
          */
         MovieRetriever movies = ApiUtils.getMovieRetirever();
 
+        int current_page = 1;
+
         /**
          * A list of movies retrieved using the API
          */
-        Call<MovieList> call = movies.getMovies(2);
+        Call<MovieList> call = movies.getMovies(current_page);
 
         call.enqueue(new Callback<MovieList>() {
 

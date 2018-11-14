@@ -76,12 +76,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_cab_background_internal_bg.xml.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -124,12 +124,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a63473694feea31c2bbc309e53e565bb\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media_custom.xml.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a63473694feea31c2bbc309e53e565bb\\res\\layout\\notification_template_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -348,12 +348,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_light.xml.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -472,12 +472,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -556,12 +556,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3ba1611b62cee3676ac4c18178512a98\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3ba1611b62cee3676ac4c18178512a98\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -576,12 +576,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3ba1611b62cee3676ac4c18178512a98\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a63473694feea31c2bbc309e53e565bb\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\3ba1611b62cee3676ac4c18178512a98\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -660,12 +660,12 @@
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
-        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
+        "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",

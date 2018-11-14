@@ -25,22 +25,44 @@
                 android:scaleType="fitXY" />
 
             <TextView
-                android:id="@+id/Rating"
+                android:id="@+id/Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorAccent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="TITLE"
+                android:textSize="30sp" />
+
+            <RatingBar
+                android:id="@+id/RatingBar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:numStars="5"
+                android:progressTint="@color/colorAccent"
+                />
+
+            <TextView
+                android:id="@+id/Rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="RATING"
                 android:textSize="15sp" />
+
 
             <TextView
                 android:id="@+id/ReleaseDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="RELEASE DATE"
                 android:textSize="15sp" />
 
@@ -48,20 +70,31 @@
                 android:id="@+id/Popularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="POPULARITY"
                 android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/OverviewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="OVERVIEW_TITLE"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/Overview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:textColor="@color/colorPrimaryLight"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="OVERVIEW"
                 android:textSize="15sp" />
 

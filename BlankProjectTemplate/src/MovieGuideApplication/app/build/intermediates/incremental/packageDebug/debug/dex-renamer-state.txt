@@ -1,4 +1,4 @@
-#Wed Nov 14 07:04:26 EST 2018
+#Wed Nov 14 14:01:07 EST 2018
 base.0=C\:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import retrofit2.Response;
 
 public class MovieInfoView extends AppCompatActivity  {
     ImageView movieImage;
-    String base_image_url = "https://image.tmdb.org/t/p/original";
+    String base_image_url = "https://image.tmdb.org/t/p/w780";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,43 +41,30 @@ public class MovieInfoView extends AppCompatActivity  {
 
         movieImage = (ImageView)findViewById(R.id.MovieImage);
         Picasso.with(this).load(base_image_url + movie.getImagePath()).into(movieImage);
-        //Bitmap bitmap_image = getBitmapfromUrl(base_image_url + movie.getImagePath());
-        //movieImage.setImageBitmap(bitmap_image);
         try{displayInfo(movie);}catch(Exception e){}
     }
 
-
-    public Bitmap getBitmapfromUrl(String imageUrl)
-    {
-        try
-        {
-            URL url = new URL(imageUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap bitmap = BitmapFactory.decodeStream(input);
-            return bitmap;
-
-        } catch (Exception e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return null;
-
-        }
-    }
     private void displayInfo(Movie movie) throws java.io.IOException{
+
+        TextView title = findViewById(R.id.Title);
+        title.setText(movie.getTitle());
+
+        RatingBar rating_bar = findViewById(R.id.RatingBar);
+        rating_bar.setRating((float)movie.getRating() / 2);
 
 
         TextView rating = findViewById(R.id.Rating);
-        rating.setText("Rating: " + String.valueOf(movie.getRating()));
+        rating.setText("Rating: " + String.valueOf(movie.getRating()) + "/10");
 
-        TextView popularity = findViewById(R.id.Popularity);
-        popularity.setText("Popularity: " + String.valueOf(movie.getPopularity()));
 
         TextView release_date = findViewById(R.id.ReleaseDate);
-        release_date.setText("Release Date: " + movie.getReleaseDate());
+        release_date.setText("Release Date: " + movie.getReleaseDate() );
+
+        TextView popularity = findViewById(R.id.Popularity);
+        popularity.setText("Popularity: " + String.valueOf(movie.getPopularity()) + "/10");
+
+        TextView overview_title = findViewById(R.id.OverviewTitle);
+        overview_title.setText(R.string.Summary);
 
         TextView overview = findViewById(R.id.Overview);
         overview.setText(movie.getOverview());
