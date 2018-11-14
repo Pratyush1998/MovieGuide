@@ -3,10 +3,13 @@ package movieguideapplication;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Parses data extracted from the API
  */
-public class Movie {
+@SuppressWarnings("serial")
+public class Movie implements Serializable {
 
     /**
      * Contains the ID number of the movie
@@ -20,14 +23,14 @@ public class Movie {
      */
     @SerializedName("video")
     @Expose
-    boolean video;
+    private boolean video;
 
     /**
      * Contains the average rating of the movie
      */
-    @SerializedName("Vote_Average")
+    @SerializedName("vote_average")
     @Expose
-    double vote_average;
+    private double vote_average;
 
     /**
      * Title of the movie
@@ -39,13 +42,41 @@ public class Movie {
     /**
      * Contains a numerical value for the popularity of the movie
      */
-    @SerializedName("Popularity")
+    @SerializedName("popularity")
     @Expose
     double popularity;
 
     @SerializedName("overview")
     @Expose
     String overview;
+
+    @SerializedName("poster_path")
+    @Expose
+    private String image_path;
+
+    @SerializedName("release_date")
+    @Expose
+    private String release_date;
+
+    /**
+     * Constructor for the Movie Class
+     * @param id Contains the ID number of the movie
+     * @param video Boolean value corresponding to the availability of the movie trailer
+     * @param vote_average Contains the average rating of the movie
+     * @param title Contains a numerical value for the popularity of the movie
+     * @param popularity Contains a numerical value for the popularity of the movie
+     */
+    public Movie(int id, boolean video, double vote_average, String title, double popularity, String overview, String image_path, String release_date)
+    {
+        this.id = id;
+        this.video = video;
+        this.vote_average = vote_average;
+        this.title = title;
+        this.popularity = popularity;
+        this.overview = overview;
+        this.image_path = image_path;
+        this.release_date = release_date;
+    }
 
     /**
      * Gets the title of the movie
@@ -58,21 +89,13 @@ public class Movie {
 
     public String getOverview(){return overview;}
 
-    /**
-     * Constructor for the Movie Class
-     * @param id Contains the ID number of the movie
-     * @param video Boolean value corresponding to the availability of the movie trailer
-     * @param vote_average Contains the average rating of the movie
-     * @param title Contains a numerical value for the popularity of the movie
-     * @param popularity Contains a numerical value for the popularity of the movie
-     */
-    public Movie(int id, boolean video, double vote_average, String title, double popularity, String overview)
-    {
-        this.id = id;
-        this.video = video;
-        this.vote_average = vote_average;
-        this.title = title;
-        this.popularity = popularity;
-        this.overview = overview;
-    }
+    public double getRating(){return vote_average;}
+
+    public double getPopularity(){return popularity;}
+
+    public String getImagePath(){return image_path;}
+
+    public String getReleaseDate(){return release_date;}
+
+    public Boolean isVideo(){return video;}
 }

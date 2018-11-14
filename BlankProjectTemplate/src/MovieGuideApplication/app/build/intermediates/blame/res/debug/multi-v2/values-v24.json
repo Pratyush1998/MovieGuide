@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Pratyush/MovieGuide_PGH/BlankProjectTemplate/src/MovieGuideApplication/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/Pratyush/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f1a5de96e1ea129bbe09ea9ee59110dc/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Pratyush/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/7eca7a009e0f773df994270f750f66a9/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a63473694feea31c2bbc309e53e565bb\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
