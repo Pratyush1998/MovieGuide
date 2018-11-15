@@ -47,7 +47,33 @@ public class MainActivity extends AppCompatActivity{
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         TextView toolbar_title = (TextView)toolbar.findViewById(R.id.toolbarTitle);
         toolbar_title.setText(getResources().getString(R.string.app_name));
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+
+        // Search Action
+        toolbar.inflateMenu(R.menu.menu_main);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                if (item.getItemId() == R.id.action_search)
+                {
+                    // Do something
+                    Toast.makeText(getApplicationContext(), "Search", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        });
+
+        // Sort Action
+        toolbar.setNavigationIcon(R.drawable.ic_sort);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getApplicationContext(), "Sort", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         listView = findViewById(R.id.movieListView);
 
         if(getIntent() != null){
@@ -57,6 +83,13 @@ public class MainActivity extends AppCompatActivity{
         }else {
             getMovies(page);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     /**
