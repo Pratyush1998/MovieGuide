@@ -18,8 +18,8 @@ public final class R {
         public static final int abc_slide_in_top = 0x7f010007;
         public static final int abc_slide_out_bottom = 0x7f010008;
         public static final int abc_slide_out_top = 0x7f010009;
-        public static final int tooltip_enter = 0x7f01000a;
-        public static final int tooltip_exit = 0x7f01000b;
+        public static final int tooltip_enter = 0x7f01000e;
+        public static final int tooltip_exit = 0x7f01000f;
     }
     public static final class attr {
         public static final int actionBarDivider = 0x7f020000;
@@ -679,10 +679,10 @@ public final class R {
         public static final int title = 0x7f07008c;
         public static final int titleDividerNoCustom = 0x7f07008d;
         public static final int title_template = 0x7f07008e;
-        public static final int topPanel = 0x7f070091;
-        public static final int uniform = 0x7f070092;
-        public static final int up = 0x7f070093;
-        public static final int wrap_content = 0x7f070097;
+        public static final int topPanel = 0x7f070092;
+        public static final int uniform = 0x7f070093;
+        public static final int up = 0x7f070094;
+        public static final int wrap_content = 0x7f070098;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f080000;

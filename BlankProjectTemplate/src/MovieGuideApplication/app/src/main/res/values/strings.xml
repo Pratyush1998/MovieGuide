@@ -3,4 +3,6 @@
     <string name="Summary">Summary</string>
     <string name="PrevButton">Prev</string>
     <string name="NextButton">Next</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_search">Search</string>
 </resources>

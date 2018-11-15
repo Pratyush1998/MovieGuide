@@ -2,7 +2,11 @@ package movieguideapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,14 +19,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import android.content.Intent;
+import java.util.concurrent.TimeUnit;
 
 
 /**
  * Parent class of the application
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     public int page = 1;
+
+    public int maxPages = 25; //Needs to be changed to number of pages returned on get request, set to 25 for now!
 
     /**
      * Variable of type ListView
@@ -38,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
-        setSupportActionBar(toolbar);
+        TextView toolbar_title = (TextView)toolbar.findViewById(R.id.toolbarTitle);
+        toolbar_title.setText(getResources().getString(R.string.app_name));
+        //setSupportActionBar(toolbar);
         listView = findViewById(R.id.movieListView);
 
         if(getIntent() != null){
@@ -49,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         }else {
             getMovies(page);
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     /**
@@ -85,10 +100,13 @@ public class MainActivity extends AppCompatActivity {
                     int page_num = page;
                     @Override
                     public void onClick(View view){
-                        page_num++;
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        intent.putExtra("PageNumber", page_num);
-                        startActivity(intent);
+                        if(page_num < maxPages) {
+                            page_num++;
+                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            intent.putExtra("PageNumber", page_num);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        }
                     }
                 });
 
@@ -96,10 +114,13 @@ public class MainActivity extends AppCompatActivity {
                     int page_num = page;
                     @Override
                     public void onClick(View view){
-                        page_num--;
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        intent.putExtra("PageNumber", page_num);
-                        startActivity(intent);
+                        if(page_num > 1) {
+                            page_num--;
+                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            intent.putExtra("PageNumber", page_num);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        }
                     }
                 });
 
@@ -149,9 +170,7 @@ public class MainActivity extends AppCompatActivity {
              */
             @Override
             public void onFailure(Call<MovieList> call, Throwable t) {
-
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-
             }
         });
 
