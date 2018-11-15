@@ -1,6 +1,10 @@
 package movieguideapplication;
 
+import android.app.SearchManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -51,19 +55,22 @@ public class MainActivity extends AppCompatActivity{
 
         // Search Action
         toolbar.inflateMenu(R.menu.menu_main);
+
+
+        /*
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
                 if (item.getItemId() == R.id.action_search)
                 {
-                    // Do something
+
                     Toast.makeText(getApplicationContext(), "Search", Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
         });
-
+*/
         // Sort Action
         toolbar.setNavigationIcon(R.drawable.ic_sort);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -87,8 +94,31 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        ComponentName componentName = new ComponentName(getApplicationContext(), SearchableActivity.class);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName));
+
+        searchView.setOnQueryTextListener(
+                new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        System.out.println(query);
+                        Intent intent = new Intent(MainActivity.this, SearchableActivity.class);
+                        intent.putExtra("Query", query);
+                        startActivity(intent);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        return false;
+                    }
+                }
+        );
         return super.onCreateOptionsMenu(menu);
     }
 

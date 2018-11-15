@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\63282e30459284a87ce2c7c5c7d980a4\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\36884a6acc4bd82856d37920aba46006\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\87df1b6051ea57faa2b59e353f8b4f9f\AndroidManifest.xml:17:1-31:12
@@ -17,20 +17,20 @@ MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\syedg\.gr
 MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\fcaf3708e45c718c229ca611561bcbc5\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3ba1611b62cee3676ac4c18178512a98\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\ec0def6c748b7565d6ffa04cd56463d2\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:2:11-69
@@ -39,7 +39,7 @@ ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src
 	android:name
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:6:5-24:19
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:6:5-32:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\63282e30459284a87ce2c7c5c7d980a4\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\63282e30459284a87ce2c7c5c7d980a4\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\syedg\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\87df1b6051ea57faa2b59e353f8b4f9f\AndroidManifest.xml:25:5-29:19
@@ -77,23 +77,41 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\syedg\.gradle\caches
 	android:theme
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:12:9-59
 activity#movieguideapplication.MainActivity
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:15:9-21:20
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:15:9-20:20
 	android:name
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:15:19-68
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
 		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:18:27-74
 activity#movieguideapplication.MovieInfoView
-ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:23:9-83
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:22:9-83
 	android:name
-		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:23:19-71
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:22:19-71
+activity#movieguideapplication.SearchableActivity
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:24:9-31:20
+	android:launchMode
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:25:17-47
+	android:name
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:24:19-74
+intent-filter#android.intent.action.SEARCH
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:26:13-28:29
+action#android.intent.action.SEARCH
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:27:13-67
+	android:name
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:27:21-64
+meta-data#android.app.searchable
+ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:29:13-30:53
+	android:resource
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:30:17-51
+	android:name
+		ADDED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml:29:24-61
 uses-sdk
 INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\syedg\Documents\3xa3\MovieGuide_PGH\BlankProjectTemplate\src\MovieGuideApplication\app\src\main\AndroidManifest.xml
