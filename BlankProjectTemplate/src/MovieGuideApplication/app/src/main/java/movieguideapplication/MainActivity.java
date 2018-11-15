@@ -59,13 +59,6 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
     /**
      * Retrieves the movies from the API
      */
