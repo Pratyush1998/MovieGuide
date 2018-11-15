@@ -39,7 +39,6 @@
         <SearchView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:size="200dp"
             android:layout_gravity="right">
         </SearchView>
 
