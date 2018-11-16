@@ -1,26 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-v12\\values-v12.xml",
-                    "from": {
-                        "startLines": "2,5,8,9",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,279,479,598",
-                        "endLines": "4,7,8,9",
-                        "endColumns": "12,12,118,94",
-                        "endOffsets": "274,474,593,688"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-v12\\values-v12.xml",
+                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\90714aec3a289964cbc44277ca39868c\\res\\values-v12\\values-v12.xml",
                     "from": {
                         "startLines": "2,5,8,9",
                         "startColumns": "4,4,4,4",
@@ -37,6 +21,22 @@
             "map": [
                 {
                     "source": "C:\\Users\\Pratyush\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f1a5de96e1ea129bbe09ea9ee59110dc\\res\\values-v12\\values-v12.xml",
+                    "from": {
+                        "startLines": "2,5,8,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,279,479,598",
+                        "endLines": "4,7,8,9",
+                        "endColumns": "12,12,118,94",
+                        "endOffsets": "274,474,593,688"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-v12\\values-v12.xml",
                     "from": {
                         "startLines": "2,5,8,9",
                         "startColumns": "4,4,4,4",

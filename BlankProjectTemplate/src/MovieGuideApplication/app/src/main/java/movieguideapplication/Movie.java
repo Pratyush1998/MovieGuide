@@ -87,6 +87,11 @@ public class Movie implements Serializable {
         return title;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
     public String getOverview(){return overview;}
 
     public double getRating(){return vote_average;}
