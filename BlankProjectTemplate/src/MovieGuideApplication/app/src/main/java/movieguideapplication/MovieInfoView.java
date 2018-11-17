@@ -55,7 +55,6 @@ public class MovieInfoView extends AppCompatActivity  {
     }
 
     private void displayInfo(Movie movie) throws java.io.IOException{
-
         getVideos(Integer.toString(movie.getId()));
         // RecyclerView videos = findViewById(R.id.recycler);
 
@@ -87,15 +86,17 @@ public class MovieInfoView extends AppCompatActivity  {
 
     private void getVideos(String movieId){
 
-        MovieRetriever video_retriever = ApiUtils.getVideoRetriever(movieId);
-        System.out.println(movieId);
-        Call<VideoList> call = video_retriever.getVideos();
+        MovieRetriever video_retriever = ApiUtils.getVideoRetriever();
+        System.out.println("Hello" + movieId);
+        //making API get request to the movie database and storing as a call object
+        Call<VideoList> call = video_retriever.getVideos(movieId);
 
         call.enqueue(new Callback<VideoList>() {
 
             @Override
             public void onResponse(Call<VideoList> call, Response<VideoList> response) {
 
+                //Taking response from API and storing in VideoList object
                 final VideoList videoList = response.body();
 
                 //DEBUGGING

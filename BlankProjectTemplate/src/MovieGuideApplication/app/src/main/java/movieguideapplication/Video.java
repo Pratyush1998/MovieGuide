@@ -23,6 +23,7 @@ public class Video implements Serializable {
     private String key;
 
     @SerializedName("type")
+    @Expose
     private String type;
 
     public Video(String name, String site, String key, String type){

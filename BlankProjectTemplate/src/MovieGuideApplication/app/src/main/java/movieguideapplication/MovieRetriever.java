@@ -27,8 +27,8 @@ public interface MovieRetriever {
     @GET("/3/discover/movie?api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=popularity.desc")
     Call <MovieList> getMovies(@Query("page") int page);
 
-    @GET("/videos?api_key=df63c842bafad96da9f702c5aaa2c5cc")
-    Call <VideoList> getVideos();
+    @GET("{movieId}/videos?api_key=df63c842bafad96da9f702c5aaa2c5cc")
+    Call <VideoList> getVideos(@Path("movieId") String movieId);
 
     }
 

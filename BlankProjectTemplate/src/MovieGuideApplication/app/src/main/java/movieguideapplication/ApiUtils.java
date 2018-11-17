@@ -21,8 +21,8 @@ public class ApiUtils {
         return RetrofitClient.getClient(BASE_URL).create(MovieRetriever.class);
     }
 
-    public static MovieRetriever getVideoRetriever(String movieId){
-        System.out.println(MOVIE_BASE_URL + movieId);
-        return RetrofitClient.getClient(MOVIE_BASE_URL + movieId).create(MovieRetriever.class);
+    public static MovieRetriever getVideoRetriever(){
+        System.out.println(MOVIE_BASE_URL);
+        return RetrofitClient2.getClient(MOVIE_BASE_URL).create(MovieRetriever.class);
     }
 }
