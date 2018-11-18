@@ -28,20 +28,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Pratyush on 2018-11-11.
- */
+import static java.lang.Thread.sleep;
+
 
 public class MovieInfoView extends AppCompatActivity  {
-
+    ImageView movieImage;
+    String base_image_url = "https://image.tmdb.org/t/p/w780";
     RecyclerView recyclerView;
+    Vector<YouTubeVideos> trailers = new Vector<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,13 +53,14 @@ public class MovieInfoView extends AppCompatActivity  {
         Intent intent = getIntent();
         Movie movie = (Movie)intent.getSerializableExtra("MovieObject");
 
+        //Movie Trailers
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView.setLayoutManager( new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setHasFixedSize(true);
 
-        try{displayInfo(movie);}catch(Exception e){}
-    }
-
-    private void displayInfo(Movie movie) throws java.io.IOException{
-        getVideos(Integer.toString(movie.getId()));
-        // RecyclerView videos = findViewById(R.id.recycler);
+        //Movie Info Display
+        movieImage = (ImageView)findViewById(R.id.MovieImage);
+        Picasso.with(this).load(base_image_url + movie.getImagePath()).into(movieImage);
 
         TextView title = findViewById(R.id.Title);
         title.setText(movie.getTitle());
@@ -81,15 +85,21 @@ public class MovieInfoView extends AppCompatActivity  {
         TextView overview = findViewById(R.id.Overview);
         overview.setText(movie.getOverview());
 
+        TextView trailer_title = findViewById(R.id.TrailerTitle);
+        trailer_title.setText(R.string.Trailers);
 
+
+        getVideos(movie);
+        
     }
 
-    private void getVideos(String movieId){
+
+    private void getVideos(final Movie movie){
 
         MovieRetriever video_retriever = ApiUtils.getVideoRetriever();
-        System.out.println("Hello" + movieId);
-        //making API get request to the movie database and storing as a call object
-        Call<VideoList> call = video_retriever.getVideos(movieId);
+
+        //Making API get request to the movie database and storing as a call object
+        Call<VideoList> call = video_retriever.getVideos(Integer.toString(movie.getId()));
 
         call.enqueue(new Callback<VideoList>() {
 
@@ -98,32 +108,22 @@ public class MovieInfoView extends AppCompatActivity  {
 
                 //Taking response from API and storing in VideoList object
                 final VideoList videoList = response.body();
+                String resolvedUrl = "";
 
-                //DEBUGGING
-                Log.e(" main ", " apt " + response.body());
-                System.out.println(response.body());
-                if(videoList == null){
-                    System.out.println("VIDEO LIST NULL");}
-
-                Video[] videos = new Video[videoList.getVideos().size()];
-
-                for(int i=0;i < videoList.getVideos().size();i++){
-                    System.out.println(videoList.getVideos().get(i).getTitle());
-                    videos[i] = videoList.getVideos().get(i);
-                            //copy the Video objects from videoList into videos
+                for(int i=0;i < videoList.getVideos().size();i++) {
+                    if (videoList.getVideos().get(i).getSite().equals("YouTube")) {
+                        resolvedUrl = MessageFormat.format("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/{0}\" frameborder=\"0\" allowfullscreen></iframe>", videoList.getVideos().get(i).getKey());
+                        trailers.add(new YouTubeVideos(resolvedUrl));
+                    }
                 }
+                VideoAdapter videoAdapter = new VideoAdapter(trailers);
+                recyclerView.setAdapter(videoAdapter);
 
-                RecyclerViewAdapter adapter = new RecyclerViewAdapter(getApplicationContext(), videos);
-                recyclerView = (RecyclerView)findViewById(R.id.recycler);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setAdapter(adapter);
 
-            }
+                }
 
             @Override
             public void onFailure(Call<VideoList> call, Throwable t) {
-                System.out.println("FAILLLLL TEST");
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
