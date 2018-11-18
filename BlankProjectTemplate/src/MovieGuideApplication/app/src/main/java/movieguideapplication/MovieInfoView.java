@@ -85,12 +85,9 @@ public class MovieInfoView extends AppCompatActivity  {
         TextView overview = findViewById(R.id.Overview);
         overview.setText(movie.getOverview());
 
-        TextView trailer_title = findViewById(R.id.TrailerTitle);
-        trailer_title.setText(R.string.Trailers);
-
 
         getVideos(movie);
-        
+
     }
 
 
@@ -110,17 +107,22 @@ public class MovieInfoView extends AppCompatActivity  {
                 final VideoList videoList = response.body();
                 String resolvedUrl = "";
 
+
                 for(int i=0;i < videoList.getVideos().size();i++) {
                     if (videoList.getVideos().get(i).getSite().equals("YouTube")) {
                         resolvedUrl = MessageFormat.format("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/{0}\" frameborder=\"0\" allowfullscreen></iframe>", videoList.getVideos().get(i).getKey());
                         trailers.add(new YouTubeVideos(resolvedUrl));
                     }
                 }
-                VideoAdapter videoAdapter = new VideoAdapter(trailers);
-                recyclerView.setAdapter(videoAdapter);
 
+                if (trailers.size() > 0) {
+                    TextView trailer_title = findViewById(R.id.TrailerTitle);
+                    trailer_title.setText(R.string.Trailers);
 
+                    VideoAdapter videoAdapter = new VideoAdapter(trailers);
+                    recyclerView.setAdapter(videoAdapter);
                 }
+            }
 
             @Override
             public void onFailure(Call<VideoList> call, Throwable t) {
