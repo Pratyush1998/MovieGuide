@@ -39,7 +39,7 @@ public class SearchableActivity extends AppCompatActivity {
 
     private void searchMovies(String query){
 
-        MovieRetriever movieRetriever = ApiUtils.getMovieRetirever();
+        MovieRetriever movieRetriever = ApiUtils.getMovieRetriever();
 
         Call<MovieList> call = movieRetriever.getMovie(query);
         call.enqueue(new Callback<MovieList>() {

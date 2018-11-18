@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Pratyush\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f1a5de96e1ea129bbe09ea9ee59110dc\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,74 @@
             ]
         },
         {
+            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Pratyush\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\7613b66ab1bdc5eed575b5fd07284cbf\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,420,506,611,726,803,879,961,1072,1175,1274,1385,1487,1594,1750,1852",
+                        "endColumns": "104,97,111,85,104,114,76,75,81,110,102,98,110,101,106,155,101,81",
+                        "endOffsets": "205,303,415,501,606,721,798,874,956,1067,1170,1269,1380,1482,1589,1745,1847,1929"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Pratyush\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\2aac24493e74e6c108946cbe2957b9c5\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1934",
+                        "endColumns": "100",
+                        "endOffsets": "2030"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\0d0cdd4cc83ed04696601e3235609e78\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1934",
+                        "endColumns": "100",
+                        "endOffsets": "2030"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\90714aec3a289964cbc44277ca39868c\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,420,506,611,726,803,879,961,1072,1175,1274,1385,1487,1594,1750,1852",
+                        "endColumns": "104,97,111,85,104,114,76,75,81,110,102,98,110,101,106,155,101,81",
+                        "endOffsets": "205,303,415,501,606,721,798,874,956,1067,1170,1269,1380,1482,1589,1745,1847,1929"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Pratyush\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\C:\\Users\\Pratyush\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f1a5de96e1ea129bbe09ea9ee59110dc\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -34,13 +98,30 @@
             "outputFile": "C:\\Users\\syedg\\Documents\\3xa3\\MovieGuide_PGH\\BlankProjectTemplate\\src\\MovieGuideApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\87df1b6051ea57faa2b59e353f8b4f9f\\res\\values-de\\values-de.xml",
+                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\a3380c8cea55f8452b7a0c0d732dadac\\res\\values-de\\values-de.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,160,268,391,489,601,687,792,907,984,1060,1142,1253,1356,1455,1566,1668,1775,1897,1999,2081",
-                        "endColumns": "104,107,122,97,111,85,104,114,76,75,81,110,102,98,110,101,106,121,101,81,100",
-                        "endOffsets": "155,263,386,484,596,682,787,902,979,1055,1137,1248,1351,1450,1561,1663,1770,1892,1994,2076,2177"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,420,506,611,726,803,879,961,1072,1175,1274,1385,1487,1594,1750,1852",
+                        "endColumns": "104,97,111,85,104,114,76,75,81,110,102,98,110,101,106,155,101,81",
+                        "endOffsets": "205,303,415,501,606,721,798,874,956,1067,1170,1269,1380,1482,1589,1745,1847,1929"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\syedg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a2c59a1de1b7f0d4c64cc9e2210daab\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1934",
+                        "endColumns": "100",
+                        "endOffsets": "2030"
                     }
                 }
             ]

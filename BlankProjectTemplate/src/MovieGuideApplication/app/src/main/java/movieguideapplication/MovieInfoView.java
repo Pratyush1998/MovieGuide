@@ -9,29 +9,43 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.squareup.picasso.Picasso;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Pratyush on 2018-11-11.
- */
+import static java.lang.Thread.sleep;
+
 
 public class MovieInfoView extends AppCompatActivity  {
     ImageView movieImage;
     String base_image_url = "https://image.tmdb.org/t/p/w780";
+    RecyclerView recyclerView;
+    Vector<YouTubeVideos> trailers = new Vector<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +53,14 @@ public class MovieInfoView extends AppCompatActivity  {
         Intent intent = getIntent();
         Movie movie = (Movie)intent.getSerializableExtra("MovieObject");
 
+        //Movie Trailers
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView.setLayoutManager( new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setHasFixedSize(true);
+
+        //Movie Info Display
         movieImage = (ImageView)findViewById(R.id.MovieImage);
         Picasso.with(this).load(base_image_url + movie.getImagePath()).into(movieImage);
-        try{displayInfo(movie);}catch(Exception e){}
-    }
-
-    private void displayInfo(Movie movie) throws java.io.IOException{
 
         TextView title = findViewById(R.id.Title);
         title.setText(movie.getTitle());
@@ -68,6 +84,51 @@ public class MovieInfoView extends AppCompatActivity  {
 
         TextView overview = findViewById(R.id.Overview);
         overview.setText(movie.getOverview());
+
+
+        getVideos(movie);
+
+    }
+
+
+    private void getVideos(final Movie movie){
+
+        MovieRetriever video_retriever = ApiUtils.getVideoRetriever();
+
+        //Making API get request to the movie database and storing as a call object
+        Call<VideoList> call = video_retriever.getVideos(Integer.toString(movie.getId()));
+
+        call.enqueue(new Callback<VideoList>() {
+
+            @Override
+            public void onResponse(Call<VideoList> call, Response<VideoList> response) {
+
+                //Taking response from API and storing in VideoList object
+                final VideoList videoList = response.body();
+                String resolvedUrl = "";
+
+
+                for(int i=0;i < videoList.getVideos().size();i++) {
+                    if (videoList.getVideos().get(i).getSite().equals("YouTube")) {
+                        resolvedUrl = MessageFormat.format("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/{0}\" frameborder=\"0\" allowfullscreen></iframe>", videoList.getVideos().get(i).getKey());
+                        trailers.add(new YouTubeVideos(resolvedUrl));
+                    }
+                }
+
+                if (trailers.size() > 0) {
+                    TextView trailer_title = findViewById(R.id.TrailerTitle);
+                    trailer_title.setText(R.string.Trailers);
+
+                    VideoAdapter videoAdapter = new VideoAdapter(trailers);
+                    recyclerView.setAdapter(videoAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VideoList> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 

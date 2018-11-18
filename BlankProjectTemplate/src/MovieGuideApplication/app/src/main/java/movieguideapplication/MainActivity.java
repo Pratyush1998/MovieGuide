@@ -56,21 +56,6 @@ public class MainActivity extends AppCompatActivity{
         // Search Action
         toolbar.inflateMenu(R.menu.menu_main);
 
-
-        /*
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-
-                if (item.getItemId() == R.id.action_search)
-                {
-
-                    Toast.makeText(getApplicationContext(), "Search", Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            }
-        });
-*/
         // Sort Action
         toolbar.setNavigationIcon(R.drawable.ic_sort);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -130,7 +115,7 @@ public class MainActivity extends AppCompatActivity{
         /**
          * MovieRetriever objected created using the BASE_URL from ApiUtils class
          */
-        MovieRetriever movies = ApiUtils.getMovieRetirever();
+        MovieRetriever movies = ApiUtils.getMovieRetriever();
 
         /**
          * A list of movies retrieved using the API
