@@ -3,8 +3,10 @@ package movieguideapplication;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +32,9 @@ import java.util.concurrent.TimeUnit;
  * Parent class of the application
  */
 public class MainActivity extends AppCompatActivity{
+
+    public AlertDialog sortDialog;
+    CharSequence[] sortTypes = {" Popularity "," Release Date "," Rating "};
 
     public int page = 1;
 
@@ -62,19 +67,59 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), "Sort", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Sort", Toast.LENGTH_SHORT).show();
+                sortOptionDialog();
             }
         });
 
+
         listView = findViewById(R.id.movieListView);
 
+        int sortOption = 0;
         if(getIntent() != null){
             Intent intent = getIntent();
             page = (int)intent.getIntExtra("PageNumber", 1);
-            getMovies(page);
+            sortOption = intent.getIntExtra("SelectedSortingOption", 0);
+            getMovies(page, sortOption);
+
         }else {
-            getMovies(page);
+            getMovies(page, sortOption);
         }
+    }
+
+    public void sortOptionDialog()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+        builder.setTitle("Select Your Choice");
+
+        builder.setSingleChoiceItems(sortTypes, -1, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int item) {
+
+
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                switch(item)
+                {
+                    case 0:
+                        intent.putExtra("SelectedSortingOption", 0);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent.putExtra("SelectedSortingOption", 1);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        intent.putExtra("SelectedSortingOption", 2);
+                        startActivity(intent);
+                        break;
+                }
+                sortDialog.dismiss();
+            }
+        });
+        sortDialog = builder.create();
+        sortDialog.show();
+
     }
 
     @Override
@@ -110,17 +155,33 @@ public class MainActivity extends AppCompatActivity{
     /**
      * Retrieves the movies from the API
      */
-    private void getMovies(final int page){
+    private void getMovies(final int page, int sortOpt){
 
         /**
-         * MovieRetriever objected created using the BASE_URL from ApiUtils class
+         * MovieRetriever object created using the BASE_URL from ApiUtils class
          */
         MovieRetriever movies = ApiUtils.getMovieRetriever();
+
 
         /**
          * A list of movies retrieved using the API
          */
-        Call<MovieList> call = movies.getMovies(page);
+
+        Call<MovieList> call;
+
+        if (sortOpt == 0)
+        {
+            call = movies.getMovies(page);
+        }
+        else if (sortOpt == 1)
+        {
+            call = movies.getMoviesDate(page);
+        }
+        else {
+            call = movies.getMoviesRating(page);
+        }
+
+
 
         call.enqueue(new Callback<MovieList>() {
 
