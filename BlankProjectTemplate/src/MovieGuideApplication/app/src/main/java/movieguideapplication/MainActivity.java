@@ -68,7 +68,9 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View view) {
 
                 //Toast.makeText(getApplicationContext(), "Sort", Toast.LENGTH_SHORT).show();
-                sortOptionDialog();
+                Intent intent = getIntent();
+                int sortOption = intent.getIntExtra("SelectedSortingOption", 0);
+                sortOptionDialog(sortOption);
             }
         });
 
@@ -87,13 +89,13 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-    public void sortOptionDialog()
+    public void sortOptionDialog(int sortOption)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
         builder.setTitle("Select Your Choice");
 
-        builder.setSingleChoiceItems(sortTypes, -1, new DialogInterface.OnClickListener() {
+        builder.setSingleChoiceItems(sortTypes, sortOption, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int item) {
 
