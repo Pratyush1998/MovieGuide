@@ -79,12 +79,13 @@ public class MovieInfoView extends AppCompatActivity  {
         TextView popularity = findViewById(R.id.Popularity);
         popularity.setText("Popularity: " + String.valueOf(movie.getPopularity()));
 
-        TextView overview_title = findViewById(R.id.OverviewTitle);
-        overview_title.setText(R.string.Summary);
+        if(movie.getOverview().length() != 0) {
+            TextView overview_title = findViewById(R.id.OverviewTitle);
+            overview_title.setText(R.string.Summary);
 
-        TextView overview = findViewById(R.id.Overview);
-        overview.setText(movie.getOverview());
-
+            TextView overview = findViewById(R.id.Overview);
+            overview.setText(movie.getOverview());
+        }
 
         getVideos(movie);
 
