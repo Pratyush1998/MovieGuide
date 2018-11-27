@@ -30,6 +30,9 @@ import android.content.Intent;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 
@@ -39,6 +42,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity{
 
     public AlertDialog sortDialog;
+    String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
     CharSequence[] sortTypes = {"Popularity","Release Date","Rating"};
 
     public int page = 1;
@@ -180,7 +184,7 @@ public class MainActivity extends AppCompatActivity{
         }
         else if (sortOpt == 1)
         {
-            call = movies.getMoviesDate(page);
+            call = movies.getMoviesDate(page, date);
         }
         else {
             call = movies.getMoviesRating(page);
