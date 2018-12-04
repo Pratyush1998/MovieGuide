@@ -1,0 +1,325 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Test Plan\\PGH Software Solutions}
+
+\author{Team 35, PGH Software Solutions
+		\\ Pratyush Bhandari, bhandarp
+		\\ Gazenfar Syed, syedg1
+		\\ Hamid Ghasemi, ghasemih}
+
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\listoftables
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Oct 25 & 1.0 & Completing parts 1 and 2 of document\\
+Oct 26 & 1.1 & Completing parts 4 to 6 of document\\
+Oct 26 & 1.2 & Completing part 3 of document\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+
+\section{General Information}
+
+\subsection{Purpose}
+The purpose of testing our project is to allow us to build more confidence in knowing that our product works as it is intended to.
+
+\subsection{Scope}
+This test plan will provide us with a method to exhaustively test our MovieGuide re-implementation. Our re-implementation must be able to display, sort and update a list of movies from an API. As well as display summaries, trailers and ratings for each respective movie. The objective of our test plan is to prove that the MovieGuide re-implementation can successfully perform these main tasks. 
+
+
+\subsection{Acronyms, Abbreviations, and Symbols}
+	
+\begin{table}[hbp]
+\caption{\textbf{Table of Abbreviations}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Abbreviation} & \textbf{Definition} \\
+\midrule
+PoC & Proof of Concept\\
+GUI & Graphical User Interface\\
+SRS & Software Requirements Specification\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+
+\begin{table}[!htbp]
+\caption{\textbf{Table of Definitions}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3.5cm}X}
+\toprule
+\textbf{Term} & \textbf{Definition}\\
+\midrule
+Automated Testing & A series of tests that are run automatically usually by a testing framework\\
+Unit Testing & A Method of testing centred on testing functions or methods\\
+Integration Testing & A method of testing that tests the entire system at once\\
+Static Testing & A method of testing that is done without executing the code\\
+Dynamic Testing & A method of testing that is done while the code is executed\\
+
+\bottomrule
+\end{tabularx}
+
+\end{table}	
+
+\subsection{Overview of Document}
+This document aims to formalize an exhaustive test plan for the MovieGuide re-implementation. It aims to arrange testing activities and delegate testing responsibilities among team members. As well as setting the initial groundwork for testing to begin, the document will also cover the specifics of testing certain characteristics of the code and will define what testing methods are to be used to perform each test.
+
+\section{Plan}
+	
+\subsection{Software Description}
+The software that is being developed will allow users to navigate through a list of movies loaded from an API. The user can then click on any movie to view a summary, a rating and watch a trailer. In technical terms, when a movie is loaded from the API, it is parsed into a java Movie object with summary, rating, trailer and title data. This data is then accordingly shown to the user through the GUI buttons.
+
+
+\subsection{Test Team}
+The team members involved in testing the application are Pratyush Bhandari, Gazenfar Syed and Hamid Ghasemi. Testing responsibilities will be split equally among team members.
+
+\subsection{Automated Testing Approach}
+Our approach to automated testing is bottom-up testing, which in essence tests each component at a lower hierarchy before going on to test the components higher in the hierarchy. As such, there will be a focus on unit testing all of the methods within classes first. Once there is certainty about the reliability of methods in the classes, the focus will shift to integration testing, which will test the functionality of each class. Finally there will be full application testing, which will involve testing the GUI of the application to perform actions that may involve  the use of multiple classes.
+
+\subsection{Testing Tools}
+The primary tool to be used for running all of the tests for the MovieGuide re-implementation will be JUnit; this framework will allow us to use Automated Testing to test our program.
+
+\subsection{Testing Schedule}
+		
+\url{https://gitlab.cas.mcmaster.ca/syedg1/MovieGuide_PGH/blob/master/BlankProjectTemplate/ProjectSchedule/3XA3%20Gantt.pdf}
+
+
+\section{System Test Description}
+	
+\subsection{Tests for Functional Requirements}
+
+\subsubsection{Loading}
+		
+\paragraph{Load Movie API}
+
+\begin{enumerate}
+
+\item{FS-LMA-1\\}
+
+Type: Functional, Dynamic, Automated
+					
+Initial State: Program contains no information about the movies
+					
+Input: Make a get request to retrieve information from the API
+					
+Output: Data is loaded into the program and is ready to be parsed
+					
+How test will be performed: A unit test consisting of a get request for the movie API will be created. The data will be loaded into the program, and assertions statements will be written to verify the loading process. 
+					
+\item{FS-LMA-2\\}
+
+Type: Functional, Dynamic, Manual
+					
+Initial State: Program contains loaded movie data
+					
+Input: User clicks on a movie to view more information
+					
+Output: Program displays the movie summary along with movie ratings
+					
+How test will be performed: The program will be run, and the user will click on a movie displayed in the main menu. The loading process will be verified once the movie summary and the movie ratings are successfully displayed to the user.
+
+\end{enumerate}
+
+\subsubsection{Sorting}
+
+\paragraph{Sort Movies}
+
+\begin{enumerate}
+	
+	\item{FS-SM-1\\}
+	
+	Type: Functional, Dynamic, Automated
+	
+	Initial State: Program contains unsorted list of movies
+	
+	Input: Sort the array containing the movies
+	
+	Output: Array of sorted movies
+	
+	How test will be performed: A unit test will be created for the sorting of the movies array. A sorting algorithm will be applied to the unsorted array and assertion statements will be utilized to verify that the array has been sorted
+	
+	\item{FS-SM-2\\}
+	
+	Type: Functional, Dynamic, Manual
+	
+	Initial State: Program contains unsorted list of movies
+	
+	Input: User clicks the option to sort movies by rating
+	
+	Output: Program lists the movies in order of highest rating to lowest rating
+	
+	How test will be performed: The program will be run, and the user will select the option to sort by rating. The program will display the list of movies sorted by rating. User will look through this list to verify the sorting functionality.
+	
+\end{enumerate}
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\subsubsection{Usability}
+		
+\paragraph{Application GUI}
+
+\begin{enumerate}
+
+\item{SS-1\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: Program is installed but not launched
+					
+Input/Condition: Users in the test group will carefully read through back end code
+					
+Output/Result: Will help identify and resolve structurally weak implementations in the program.
+					
+How test will be performed: The test team will perform a code walkthrough and look for opportunities where the usability of the user interface can be enhanced.
+					
+\item{SS-2\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Program has been launched 
+					
+Input/Condition: Users in the test team will rate the program on the criteria of usability and overall satisfaction. The ratings will be given on a scale of 1 to 5.
+					
+Output/Result: Average rating in each field must be 3 or higher
+					
+How test will be performed: Users in the test team will spend some time navigating through the application enough to explore the user interface thoroughly. Then they will rate the program on the basis of usability and satisfaction. If either criteria has an average rating below 3, the team will need to explore alternatives to improve the user interface.
+
+\end{enumerate}
+
+\subsubsection{Performance}
+
+\paragraph{Application Timeliness}
+
+\begin{enumerate}
+	
+	\item{SS-3\\}
+	
+	Type: Structural, Dynamic, Manual
+	
+	Initial State: Program has been launched
+	
+	Input/Condition: Users will select the option to sort the movies by rating
+	
+	Output/Result: The sorted list of movies must be displayed under 1 second
+	
+	How test will be performed: The user will click the option to sort movies by rating. The time taken to display the sorted list will be recorded. If the time elapsed is greater than 1 second, a more efficient sorting algorithm will need to be implemented.
+	
+	\item{SS-4\\}
+	
+	Type: Structural, Dynamic, Manual
+	
+	Initial State: Program has been launched 
+	
+	Input/Condition: User will click on a movie to view more information 
+	
+	Output/Result: The movie summary and rating will be displayed to the user in under 1 second
+	
+	How test will be performed: The user will click on a movie from the launch screen. The time taken to display the corresponding movie summary and rating will be recorded. If the time elapsed is greater than 1 second, implementations of different data structures should be explored to increase efficiency.
+	
+\end{enumerate}
+
+\section{Tests for Proof of Concept}
+
+For proof of Concept testing we will be focusing on verifying and validating the means by performing automated testing. Automated testing will require the ability to use sort and search for a particular outputs and verify the output. Therefore, testing for proof concept will contain using of sorting and searching for movies and displaying movie information such as rating, summary and it’s genre. 
+
+\subsection{Using Sorting and Searching to Display a Movie}
+		
+
+\begin{enumerate}
+
+\item{FC-1\\}
+Type:  Functional, Dynamic, Automated\\
+Initial State: There is an input\\
+Input: A complete movie name \\
+Output: All the movies that have the exact same name or their names contain the input name will be displayed on the screen in alphabet order.\\
+How Test Will Be Performed: One movie name will be picked from the movie list. Then what happens is it will go through the movie list, compares it to each movie name. If there is only one movie with that name the system will be returning one movie, if there are more than one movie, it will sort them based on the alphabet then exhibit those movies on the screen.
+
+					
+\item{FC-2\\}
+Type:  Functional, Dynamic, Automated\\
+Initial State: There is an input\\
+Input: An incomplete movie name as an example (Pu--)\\
+Output: All the movies that contain the exact same letters in their name will be displayed on the screen in alphabet order.\\
+How Test Will Be Performed: Two letters will be typed in the movie search designated place. Then the program must compare those letters to each movie name in order to find movies that have those two letters in their names. Then movies must be shown on the screen in alphabet order, unless there is no movie in the list with those two letters. 
+
+\end{enumerate}
+
+\subsection{Displaying Movie Information}
+How Test Will Be Performed: In each of following tests, one movie will be chosen and then it will be checked if the information which movie provides is exactly as expected information.
+
+\begin{enumerate}
+\item{FC-3}\\
+Type:  Functional, Dynamic, Manual\\
+Initial State: Set an input\\
+Input: A movie name \\
+Output: Provide all the information about the movie that has been picked
+
+
+\item{FC-4\\}
+Type:  Functional, Dynamic, Manual\\
+Initial State: No input \\
+Input: One movie be randomly picked\\
+Output: Provide all the information about the movie which has been picked
+
+\item{FC-5\\}
+Type:  Functional, Dynamic, Manual\\
+Initial State: Set an input\\
+Input: an incomplete movie name be randomly chosen\\
+Output: Provide all the information about the movie that has been picked
+\end{enumerate}
+
+\section{Comparison to Existing Implementation}	
+There are three tests that compare the program to the Existing Implementation of the program. Please refer to:\\
+
+FC-1 in Tests for Proof of Concept\\
+
+SS-1 and SS-2 in Tests for Nonfunctional Requirements - Usability\\
+
+SS-3 and SS-4 in Tests for Nonfunctional Requirements - Performance\\
+
+				
+\section{Unit Testing Plan}
+JUNIT framework will be used to do unit testing for this project.
+		
+\subsection{Unit testing of internal functions}
+To create unit test for internal functions of the program, methods that have a return value can be used to be tested. To be able to use those methods, particular inputs would be given to the methods and be checked if the result is similar to expected outputs. Series of unit tests can be created in this way. Unit tests will include tests that contain proper inputs and inputs that generate exceptions. Individually, all the classes will take care of importing everything that is needed for unit tests. This project will not need any stubs or drivers to be imported for testing. In the case of checking how much code we have covered we use coverage metrics. We will test majority of the codes which are not simple functions. Our goal percentage to beat will be 86 percent.
+		
+\subsection{Unit testing of output files}		
+To construct unit tests, which will test the accuracy of the output movies through searching, we will need movies which must be displayed and what it actually displays as outputs.There are cases that a user searches for a specific movie by inputting movie name and that name is part of the other movie name, in that case output file must exhibit all movies that consist of input name. For this case we will use methods which compare if the output file name and output file are exactly what have been expected. In order for a test case to be considered passed, movies should be at least 99 percent the same. Less than 99 percent and the test case fails. For this set of unit tests the required imports are:  java.io.IOException,  java.io.File, and java.io.File.compareTo.
+
+
+\end{document}
