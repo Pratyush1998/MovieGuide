@@ -4,6 +4,7 @@
 \usepackage{tabularx}
 \usepackage{pdfpages}
 \usepackage{hyperref}
+\usepackage{color}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -186,6 +187,28 @@ How test will be performed: The program will be run, and the user will click on 
 	
 \end{enumerate}
 
+\subsubsection{\textcolor{red}{Trailers}}
+
+\paragraph{\textcolor{red}{Showing Trailers}}
+
+\begin{enumerate}
+	
+	\item{\textcolor{red}{FS-SM-1\\}}
+	
+	\textcolor{red}{Type: Functional, Dynamic, Automated}
+	
+	\textcolor{red}{Initial State: Program shows the trailers of the movies}
+	
+	\textcolor{red} {Input: Movies}
+	
+	\textcolor{red}{Output: Trailers of movies}
+	
+	\textcolor{red}{How test will be performed: A unit test will be created for the testing of each movies trailers. There would be a section to select one of the trailers from each movie if there is one and test if it plays}\\
+	
+	
+\end{enumerate}
+
+
 \subsection{Tests for Nonfunctional Requirements}
 
 \subsubsection{Usability}
@@ -256,7 +279,7 @@ How test will be performed: Users in the test team will spend some time navigati
 
 For proof of Concept testing we will be focusing on verifying and validating the means by performing automated testing. Automated testing will require the ability to use sort and search for a particular outputs and verify the output. Therefore, testing for proof concept will contain using of sorting and searching for movies and displaying movie information such as rating, summary and it’s genre. 
 
-\subsection{Using Sorting and Searching to Display a Movie}
+\subsection{Using Sorting and Searching to Display and \textcolor{red}{Movie and select a trailer}}
 		
 
 \begin{enumerate}
@@ -275,6 +298,13 @@ Initial State: There is an input\\
 Input: An incomplete movie name as an example (Pu--)\\
 Output: All the movies that contain the exact same letters in their name will be displayed on the screen in alphabet order.\\
 How Test Will Be Performed: Two letters will be typed in the movie search designated place. Then the program must compare those letters to each movie name in order to find movies that have those two letters in their names. Then movies must be shown on the screen in alphabet order, unless there is no movie in the list with those two letters. 
+
+\item{\textcolor{red}{FC-3\\}}
+\textcolor{red}{Type:  Functional, Dynamic, Automated\\}
+\textcolor{red}{Initial State: There is an input\\}
+\textcolor{red}{Input: Select a movie\\}
+\textcolor{red}{Output: The trailer must be displayed by the program.\\}
+\textcolor{red}{How Test Will Be Performed: Searching will be used to find a movie and then if that movie has a trailer it must be shown by the program. }
 
 \end{enumerate}
 
