@@ -6,9 +6,9 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{graphicx}
-\usepackage[export]{adjustbox}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{color}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -59,9 +59,8 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Nov 8 & 1.0 & Parts 1 and 2 completed\\
-Nov 9 & 1.1 & Parts 3, 4, and 5 completed\\
-Nov 9 & 1.2 & Parts 6 and 7 completed\\
+Nov 8 & 1.0 & Parts 1 and 2\\
+Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -130,6 +129,11 @@ actually be implemented.
 \item[\refstepcounter{mnum} \mthemnum \label{mHH}:] Searching Algorithm Module
 \item[\refstepcounter{mnum} \mthemnum \label{mHH}:] List Object Module
 \item[\refstepcounter{mnum} \mthemnum \label{mHH}:] retrofitURL Module
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] \textcolor{red}{Video Module}
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] \textcolor{red}{Videoadapter Module}
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] \textcolor{red}{YoutubeVideos Module}
+\item[\refstepcounter{mnum} \mthemnum \label{mHH}:] \textcolor{red}{VideoList Module}
+
 \end{description}
 
 
@@ -151,22 +155,10 @@ actually be implemented.
 
 \midrule
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
-=======
->>>>>>> 103421e... Doxygen commented source files, Module Guide pdf and tex files, MIS pdf
 \multirow{3}{0.3\textwidth}{Software Decision Module} \\
 & Searching Algorithm Module\\
 & List Object Module\\
 & retrofitURL Module\\
-<<<<<<< HEAD
-=======
->>>>>>> 8597404... Modifying MG File
->>>>>>> 103421e... Doxygen commented source files, Module Guide pdf and tex files, MIS pdf
 \bottomrule
 
 \end{tabular}
@@ -176,18 +168,10 @@ actually be implemented.
 
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
-<<<<<<< HEAD
-The design of the system is intended to satisfy the requirements developed in the SRS. In this stage, the system is decomposed into modules. The connection between requirements and modules is listed in Table \ref{TblRT} and \ref{TblNRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
-=======
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-<<<<<<< HEAD
-between requirements and modules is listed in Table \ref{TblRT}.
-=======
 between requirements and modules is listed in Table \ref{TblRT} and \ref{TblNRT}. With regards to the main functional requirement of providing a synopsis of every movie, this requirement is fulfilled through the output module, which will provide the service of displaying a specific movie's information when it is clicked on by the user. The searching module, in tandem with the searching algorithm module, will fulfill the functional requirement of having the program list movies based on a specific user query. Lastly, the SortMovies module along with the retrofitURL module will fulfill the functional requirement of allowing the user to sort movies by name, rating or genre.
 
->>>>>>> 8597404... Modifying MG File
->>>>>>> 103421e... Doxygen commented source files, Module Guide pdf and tex files, MIS pdf
 
 \section{Module Decomposition} \label{SecMD}
 
@@ -253,6 +237,7 @@ FR2 & M3,M7,M8\\
 FR3 & M3,M7,M5,M8\\
 FR4 & M5\\
 FR5 & M4,M7\\
+\textcolor{red}{FR6} & \textcolor{red}{M9,M10, M11, M12}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Functional Requirements and Modules}
@@ -315,21 +300,15 @@ AC5 & M5\\
 \label{TblACT}
 \end{table}
 
-<<<<<<< HEAD
-
-
-\section{Use Hierarchy Between Modules} \label{SecUse}
-=======
 
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
 \includegraphics{3}
->>>>>>> 103421e... Doxygen commented source files, Module Guide pdf and tex files, MIS pdf
 
 \begin{figure}[H]
 \centering
-\includegraphics[max size={\textwidth}{\textheight}]{3}
+%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
