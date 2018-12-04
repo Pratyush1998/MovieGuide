@@ -1,12 +1,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 57de549... Revision 1 Documents, Commented Source Code, and Updated Gantt Chart
 <?xml version="1.0" encoding="UTF-8"?><project name="PGH Software Solutions" company="" webLink="http://" view-date="2018-09-02" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="2.8.9" locale="en_CA">
 =======
 <?xml version="1.0" encoding="UTF-8"?><project name="PGH Software Solutions" company="" webLink="http://" view-date="2018-09-02" view-index="0" gantt-divider-location="298" resource-divider-location="300" version="2.8.9" locale="en_CA">
 >>>>>>> 0350a6a... Updating Test Report and Gantt Chart
+<<<<<<< HEAD
 =======
 <?xml version="1.0" encoding="UTF-8"?><project name="PGH Software Solutions" company="" webLink="http://" view-date="2018-09-02" view-index="0" gantt-divider-location="298" resource-divider-location="300" version="2.8.9" locale="en_CA">
 >>>>>>> c888fd68fe4eb597343a5147c5cd92c3cc3f1854
+=======
+>>>>>>> 57de549... Revision 1 Documents, Commented Source Code, and Updated Gantt Chart
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Name" width="165" order="0"/>
@@ -44,6 +50,9 @@
         </taskproperties>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 57de549... Revision 1 Documents, Commented Source Code, and Updated Gantt Chart
         <task id="0" name="Project Approval" color="#8cb6ce" meeting="false" start="2018-09-17" duration="3" complete="0" thirdDate="2018-09-27" thirdDate-constraint="0" expand="true"/>
         <task id="4" name="Problem Statement" color="#8cb6ce" meeting="false" start="2018-09-20" duration="1" complete="0" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
         <task id="8" name="Development Plan" color="#8cb6ce" meeting="false" start="2018-09-24" duration="4" complete="0" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
@@ -55,8 +64,11 @@
         <task id="21" name="Final Demo" color="#8cb6ce" meeting="false" start="2018-10-17" duration="30" complete="0" thirdDate="2018-10-29" thirdDate-constraint="0" expand="true"/>
         <task id="26" name="Final Doc" color="#8cb6ce" meeting="false" start="2018-11-30" duration="6" complete="0" thirdDate="2018-09-10" thirdDate-constraint="0" expand="true"/>
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> c888fd68fe4eb597343a5147c5cd92c3cc3f1854
+=======
+>>>>>>> 57de549... Revision 1 Documents, Commented Source Code, and Updated Gantt Chart
         <task id="0" name="Project Approval" color="#8cb6ce" meeting="false" start="2018-09-17" duration="3" complete="100" thirdDate="2018-09-27" thirdDate-constraint="0" expand="true"/>
         <task id="4" name="Problem Statement" color="#8cb6ce" meeting="false" start="2018-09-20" duration="1" complete="100" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
         <task id="8" name="Development Plan" color="#8cb6ce" meeting="false" start="2018-09-24" duration="4" complete="100" thirdDate="2018-09-13" thirdDate-constraint="0" expand="true"/>
@@ -83,9 +95,13 @@
         </task>
         <task id="59" name="Testing Complete" color="#cccc00" meeting="true" start="2018-11-27" duration="0" complete="0" thirdDate="2018-09-03" thirdDate-constraint="0" expand="true"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0350a6a... Updating Test Report and Gantt Chart
 =======
 >>>>>>> c888fd68fe4eb597343a5147c5cd92c3cc3f1854
+=======
+>>>>>>> 0350a6a... Updating Test Report and Gantt Chart
+>>>>>>> 57de549... Revision 1 Documents, Commented Source Code, and Updated Gantt Chart
     </tasks>
     <resources>
         <resource id="0" name="Pratyush Bhandari" function="SoftwareDevelopment:10" contacts="" phone=""/>
