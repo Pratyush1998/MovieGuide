@@ -18,7 +18,7 @@ public interface MovieRetriever {
 
     /**
      * Get request for movies based by popularity
-     * @param title
+     * @param title name of movie to be searched
      * @return a call response of type MovieList
      */
     @GET("/3/search/movie?&api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=popularity.desc")
@@ -34,16 +34,16 @@ public interface MovieRetriever {
 
     /**
      * Get request for movies sorted by release date starting from a specified date and page
-     * @param page
-     * @param Date
+     * @param page Page from which movies will be extracted
+     * @param Date The current date to be passed into the query
      * @return a call response of type MovieList
      */
-    @GET("/3/discover/movie?api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=release_date.desc&primary_release_date.lte=2017-11-11&vote_count.gte=10")
+    @GET("/3/discover/movie?api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=release_date.desc&vote_count.gte=10")
     Call <MovieList> getMoviesDate(@Query("page") int page, @Query("primary_release_date.lte") String Date);
 
     /**
      * Get request for movies sorted by vote average  starting with specified page
-     * @param page
+     * @param page Page from which movies will be extracted
      * @return a call response of type MovieList
      */
     @GET("/3/discover/movie?api_key=df63c842bafad96da9f702c5aaa2c5cc&sort_by=vote_average.desc&vote_count.gte=1000")
@@ -52,7 +52,7 @@ public interface MovieRetriever {
 
     /**
      * Get request for videos based on a movieId
-     * @param movieId
+     * @param movieId The movieId that identifies the movie
      * @return a Call response of type VideoList
      */
     @GET("{movieId}/videos?api_key=df63c842bafad96da9f702c5aaa2c5cc")

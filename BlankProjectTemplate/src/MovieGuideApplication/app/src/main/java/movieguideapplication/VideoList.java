@@ -11,9 +11,6 @@ import java.util.List;
  */
 public class VideoList {
 
-    /**
-     * Contains a list of videos
-     */
     @SerializedName("results")
     @Expose
     private List<Video> videos = null;
@@ -25,14 +22,6 @@ public class VideoList {
     public List<Video> getVideos()
     {
         return videos;
-    }
-
-    /**
-     * Updates the list of videos
-     * @param videos
-     */
-    public void setVideos(List<Video> videos) {
-        this.videos = videos;
     }
 
 }
