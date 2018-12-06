@@ -12,9 +12,9 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Test Report\\Title of Project}
+\title{SE 3XA3: Test Report\\Movie Guide}
 
-\author{Team 35, PGH
+\author{Team 35, PGH Software Solutions
 		\\ Hamid Ghasemi and ghasemih
 		\\ Pratyush Bhandari, bhandarp
 		\\ Gazenfar Syed, syedg1
@@ -37,8 +37,8 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Dec3 & 1.0 & Notes\\
-Dec4 & 1.1 & Notes\\
+Dec3 & 1.0 & Completed parts 1, 2, and 3\\
+Dec4 & 1.1 & Completed parts 4 and 7\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -46,8 +46,6 @@ Dec4 & 1.1 & Notes\\
 \newpage
 
 \pagenumbering{arabic}
-
-This document ...
 
 \section{Functional Requirements Evaluation}
 The aim of these tests is to make sure that user is able to use the software according to the given requirements. These tests will include sorting testing, searching teasting, accessing the summary, rate and date released, and trailer testing.\\
@@ -68,7 +66,7 @@ Results: The user is able to watch a movie trailer by simply selecting movie's t
 
 \subsection{Usability}
 \subsubsection{GUI Testing}
-The Graphical User Interface (GUI) was tested by 7 students from Mac who are not in Software Engineering but they were interested to see our apps (From other programs) to reflect the technological experience of the potential users for this program. All the participants observed the timing it took them to perform the requested tasks, and they see the difficulty of the softwar, and how long would take them to get their hands around the app. At the end of the section they all gave us feedbacks about our apps and evaluate the difficlty and performance of our application.\\
+The Graphical User Interface (GUI) was tested by 7 students from Mac who are not in Software Engineering but they were interested to see our apps (From other programs) to reflect the technological experience of the potential users for this program. All the participants observed the timing it took them to perform the requested tasks, and they see the difficulty of the software, and how long would take them to get their hands around the app. At the end of the section they all gave us feedbacks about our apps and evaluate the difficulty and performance of our application.\\
 
 	
 Test Name: SS-1 \\
@@ -117,19 +115,92 @@ Results: Sorting movies based on rate, popularity, and date released took about 
 In our app, we used retrofit which is one of the library of the android studio. It is a powerful framework for authenticating and interacting with api and sending network requests. Retrofit made our app easier to code since it can be used to create json object and then we used that in our implementation, using it in our java implementation. This is one of the main difference between our code and existing implementation. 
 
 \section{Unit Testing}
+\subsection{Load Movies API Unit Test}
+\subsubsection{Control}
+
+Retrieve data from the API
+
+\subsubsection{Input}
+
+Query used to retrieve data from the database 
+
+\subsubsection{Output}
+
+A list containing Movie objects. Each Movie object will contain parsed data from the API. 
+
+\subsubsection{Procedure}
+
+A get request was made to the API using a query passed in as input. The data is parsed into Movie objects 
+and a list of Movie objects is created. Finally, the list of Movie objects was iterated through and movie names were printed out to verify that data for that movie has been passed. 
+
+\subsection{Sorting Movies Unit Test}
+\subsubsection{Control}
+
+Returns a list of movies sorted based on input by making a query to the API. 
+
+\subsubsection{Input}
+
+Select to sort by popularity, rating, or release date. 
+
+\subsubsection{Output}
+
+The list of movies will be returned in sorted order based on input. 
+
+\subsubsection{Procedure}
+
+A sorting option will be selected. The software will display the movies in sorted order. The information of the movies will be manually checked to determine whether the sorting has been done correctly. 
+
+\subsection{Movie Trailers Unit Test}
+\subsubsection{Control}
+
+Utilizes HTML5 to load the trailers into the program.  
+
+\subsubsection{Input}
+
+The play button for the video is clicked.
+
+\subsubsection{Output}
+
+The program plays the selected video.
+
+\subsubsection{Procedure}
+
+A movie was selected from the displayed list of movies. One of the movie trailers was played. The response of the program was checked to determine whether the movie trailers functionality is functioning as expected.  
 
 \section{Changes Due to Testing}
 
 \section{Automated Testing}
 		
 \section{Trace to Requirements}
+\subsubsection{Load Movies Unit Test (Tests FRAC and FRSE)}
+
+This test covers the following requirements (Requirements numbering corresponds to the requirements document): FR1, FR2, FR3
+
+It covers FR1 because when it loads the movies, it parses the data of each movie and prints the movie name to verify that the software is able to provide a synopsis about the movies. 
+
+It covers FR2 because it loads movies using the search query passed. The movie names are printed out to show that only movies matching the search query were obtained from the database.
+
+It covers FR3 because no movie names will be printed upon running the test if there are no search hits. This means that no movies will be displayed, which communicates that there were no movies found in the database matching the search query. 
+
+\subsubsection{Sorting Movies Unit Test (Test FRSR)}
+
+This test covers the following requirements (Requirements numbering corresponds to the requirements document): FR5
+
+It covers FR5 because it tests whether the movies have been sorted correctly. 
+
+\subsubsection{Movie Trailers Unit Test (Test FRTR)}
+
+This test covers the following requirements (Requirements numbering corresponds to the requirements document): FR1, FR4, FR6
 		
+It covers FR1 because it tests whether the movie data, which includes movie trailers, is loaded successfully into the program. 
+
+It covers FR4 because it tests whether the video playback works as expected by playing the videos. 
+
+It covers FR6 because it requires the videos to be successfully retrieved from the internet, so that they can be displayed to the user. 
+ 
 \section{Trace to Modules}		
 
 \section{Code Coverage Metrics}
 
-\bibliographystyle{plainnat}
-
-\bibliography{SRS}
 
 \end{document}
