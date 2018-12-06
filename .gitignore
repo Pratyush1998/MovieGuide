@@ -22,5 +22,4 @@ cabal.config
 *.out
 *.snm
 /Physics Engine Families/Papers
-Main
 *-nup.pdf
