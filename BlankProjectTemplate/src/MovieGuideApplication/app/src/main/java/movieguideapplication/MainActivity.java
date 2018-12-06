@@ -98,6 +98,10 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
+    /**
+     * creates an option box with radio buttons displaying the different sorting options available
+     * @param sortOption
+     */
     public void sortOptionDialog(int sortOption)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -131,6 +135,11 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    /**
+     * Initializes the options menu when the application is started
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -162,7 +171,9 @@ public class MainActivity extends AppCompatActivity{
     }
 
     /**
-     * Retrieves the movies from the API
+     * Retrieves movies from the API
+     * @param page
+     * @param sortOpt
      */
     private void getMovies(final int page, final int sortOpt){
 

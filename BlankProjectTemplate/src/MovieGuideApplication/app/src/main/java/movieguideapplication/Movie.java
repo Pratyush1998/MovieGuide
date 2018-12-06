@@ -87,20 +87,48 @@ public class Movie implements Serializable {
         return title;
     }
 
+    /**
+     * Gets the Id of a movie
+     * @return id
+     */
     public int getId()
     {
         return id;
     }
 
+    /**
+     * gets the movie summary
+     * @return overview
+     */
     public String getOverview(){return overview;}
 
+    /**
+     * gets the rating of a movie
+     * @return vote_average
+     */
     public double getRating(){return vote_average;}
 
+    /**
+     * gets the popularity number of a movie
+     * @return popularity
+     */
     public double getPopularity(){return popularity;}
 
+    /**
+     * gets the path for the movie poster of a movie
+     * @return image_path
+     */
     public String getImagePath(){return image_path;}
 
+    /**
+     * gets the release date of a movie
+     * @return release_date
+     */
     public String getReleaseDate(){return release_date;}
 
+    /**
+     * returns whether a movie has a trailer for it or not
+     * @return
+     */
     public Boolean isVideo(){return video;}
 }
