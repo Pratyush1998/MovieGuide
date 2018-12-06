@@ -12,15 +12,15 @@ import java.util.List;
 public class VideoList {
 
     /**
-     * Contains a list of movies
+     * Contains a list of videos
      */
     @SerializedName("results")
     @Expose
     private List<Video> videos = null;
 
     /**
-     * Gets the list of loaded movies
-     * @return list of movies loaded from API
+     * Gets the list of loads video
+     * @return videos
      */
     public List<Video> getVideos()
     {
@@ -28,8 +28,8 @@ public class VideoList {
     }
 
     /**
-     * Updates the list of movies
-     * @param videos new list of movies
+     * Updates the list of videos
+     * @param videos
      */
     public void setVideos(List<Video> videos) {
         this.videos = videos;

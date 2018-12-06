@@ -4,6 +4,11 @@ public class YouTubeVideos {
     String videoUrl;
     public YouTubeVideos() {
     }
+
+    /**
+     * 
+     * @param videoUrl
+     */
     public YouTubeVideos(String videoUrl) {
         this.videoUrl = videoUrl;
     }
