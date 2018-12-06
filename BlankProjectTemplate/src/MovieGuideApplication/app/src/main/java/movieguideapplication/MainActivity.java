@@ -48,9 +48,6 @@ public class MainActivity extends AppCompatActivity{
     public int page = 1;
     public int sortOption;
     public int maxPages;
-    /**
-     * Variable of type ListView
-     */
     ListView listView;
 
     /**
@@ -98,6 +95,10 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
+    /**
+     * creates an option box with radio buttons displaying the different sorting options available
+     * @param sortOption Numerical representation of the sort option selected
+     */
     public void sortOptionDialog(int sortOption)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -131,6 +132,11 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    /**
+     * Initializes the options menu when the application is started
+     * @param menu Contains the menu option to be inflated to the current activity
+     * @return Returns false after the search has been made
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -143,6 +149,12 @@ public class MainActivity extends AppCompatActivity{
 
         searchView.setOnQueryTextListener(
                 new SearchView.OnQueryTextListener() {
+
+                    /**
+                     * Contains the logic for when the search query is submitted
+                     * @param query Movie name to be searched
+                     * @return Returns false once the SearchableActivity has been started
+                     */
                     @Override
                     public boolean onQueryTextSubmit(String query) {
                         System.out.println(query);
@@ -151,6 +163,7 @@ public class MainActivity extends AppCompatActivity{
                         startActivity(intent);
                         return false;
                     }
+
 
                     @Override
                     public boolean onQueryTextChange(String newText) {
@@ -162,7 +175,9 @@ public class MainActivity extends AppCompatActivity{
     }
 
     /**
-     * Retrieves the movies from the API
+     * Retrieves movies from the API
+     * @param page The page from which movies will be retrieved
+     * @param sortOpt The sorting option selected
      */
     private void getMovies(final int page, final int sortOpt){
 
@@ -215,6 +230,11 @@ public class MainActivity extends AppCompatActivity{
 
                 next.setOnClickListener(new View.OnClickListener(){
                     int page_num = page;
+
+                    /**
+                     * Contains logic for animations when the next page button is clicked
+                     * @param view contains the current activity
+                     */
                     @Override
                     public void onClick(View view){
                         if(page_num < maxPages) {
@@ -230,6 +250,11 @@ public class MainActivity extends AppCompatActivity{
 
                 prev.setOnClickListener(new View.OnClickListener(){
                     int page_num = page;
+
+                    /**
+                     * Contains logic for animations when the previous page button is clicked
+                     * @param view contains the current activity
+                     */
                     @Override
                     public void onClick(View view){
                         if(page_num > 1) {
