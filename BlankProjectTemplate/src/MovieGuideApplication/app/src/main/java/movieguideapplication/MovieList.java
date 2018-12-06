@@ -18,6 +18,10 @@ public class MovieList {
     @Expose
     private List<Movie> movies = null;
 
+    @SerializedName("total_pages")
+    @Expose
+    private int maxPages = 0;
+
     /**
      * Gets the list of loaded movies
      * @return list of movies loaded from API
@@ -34,5 +38,7 @@ public class MovieList {
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
     }
+
+    public int getMaxPages(){return maxPages;}
 
 }
